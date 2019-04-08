@@ -1,4 +1,4 @@
-# project 001
+# Assignment Resources
 
 _**This repo is brought to you by teh\_cursed\_ones**_
 
