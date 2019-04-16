@@ -1,0 +1,20 @@
+// Work Breakdown Agreement //
+	> Context diagram (overview of overall UML)
+		- [*] Player
+		- [*] Environment objects
+		- [#] Grunts / Hostile NPCs
+		- [*] Neutral NPCs
+		- [#] Miniboss
+	
+	> Interaction diagrams
+		- [B] TBA
+	
+	> Design rationale
+		- [#] Overview
+		- [B] UML justifications
+		- [B] Assumptions
+		- [*] Out-of-scope implementation ^
+		
+	DIGISIGNS:
+		- Rithesh R Jayaram (16/04/2019) [*]
+		- <name> [#]
