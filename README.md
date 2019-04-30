@@ -21,6 +21,3 @@ _Rithesh R Jayaram_
 _Sarah D Dennis_
 
 --------------------------------------------------------
-
-
-There is nothing actually in this repository yet :/
