@@ -1,4 +1,4 @@
-// Work Breakdown Agreement //
+// Work Breakdown Agreement - Assignment 1 //
 	> Context diagram (overview of overall UML)
 		- [*] Player
 		- [*] Environment objects
