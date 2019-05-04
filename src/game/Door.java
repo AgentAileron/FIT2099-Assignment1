@@ -4,6 +4,7 @@ import edu.monash.fit2099.demo.Floor;
 import edu.monash.fit2099.demo.WindowSmashAction;
 import edu.monash.fit2099.engine.Actor;
 import edu.monash.fit2099.engine.Ground;
+import edu.monash.fit2099.engine.Item;
 import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Action;
 import edu.monash.fit2099.engine.Actions;
@@ -11,12 +12,14 @@ import edu.monash.fit2099.engine.Actions;
 
 public class Door extends Ground {
 	
-	boolean isLocked = true;
-	
-	Key assignedKey = new Key();
+	private Key assignedKey;
 
 	public Door() {
 		super('D');
+	}
+	
+	public void setKey(Key newKey) {
+		this.assignedKey = newKey;
 	}
 	
 	public Key getKey() {
@@ -25,7 +28,8 @@ public class Door extends Ground {
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		return new Actions(new WindowSmashAction(direction, location));
+		// Player chooses key they want to use.
+		return new Actions(new unlockDoor(key, direction, location));
 	}
 	
 	@Override

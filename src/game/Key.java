@@ -21,5 +21,9 @@ public class Key extends Item {
 		else
 			return false;
 	}
+	
+	public String getID() {
+		return keyId;
+	}
 
 }

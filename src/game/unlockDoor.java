@@ -19,7 +19,8 @@ public class unlockDoor extends Action {
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		if(usedKey.isSameKey(doorLocation.getGround().getKey()) {
+		// Get key at
+		if(usedKey.isSameKey(((Door) doorLocation.getGround()).getKey())) {
 			return actor + " has the wrong key.";
 		}
 		else {

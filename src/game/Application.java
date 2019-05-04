@@ -15,15 +15,15 @@ public class Application {
 	public static void main(String[] args) {
 		World world = new World(new Display());
 
-		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall());
+		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door());
 		GameMap gameMap;
 
 		List<String> map = Arrays.asList(
 				".......................",
 				"....#####....######....",
 				"....#...#....#....#....",
-				"....#........#....#....",
-				"....#####....##.###....",
+				"....#...D....#....#....",
+				"....#####....##D###....",
 				".......................",
 				".......................",
 				".......................",
@@ -40,6 +40,9 @@ public class Application {
 		gameMap.addActor(grunt, 0, 0);
 		Grunt grunt2 = new Grunt("Norbert", player);
 		gameMap.addActor(grunt2,  10, 10);
+		
+		KeyManager manager = new KeyManager();
+		manager.assignKey();
 			
 		world.run();
 	}
