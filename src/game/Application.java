@@ -42,7 +42,7 @@ public class Application {
 		gameMap.addActor(grunt2,  10, 10);
 		
 		KeyManager manager = new KeyManager();
-		manager.assignKey();
+		//manager.assignKey();
 			
 		world.run();
 	}

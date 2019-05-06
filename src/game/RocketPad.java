@@ -9,32 +9,19 @@ import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Action;
 import edu.monash.fit2099.engine.Actions;
 import edu.monash.fit2099.engine.Display;
+import java.util.*;
 
+public class RocketPad extends Ground {
 
-public class Door extends Ground {
-	
-	private Key assignedKey;
-
-	public Door() {
-		super('D');
-	}
-	
-	public void setKey(Key newKey) {
-		this.assignedKey = newKey;
-	}
-	
-	public Key getKey() {
-		return assignedKey;
+	public RocketPad() {
+		super('%');
+		
+		ArrayList<Item> placedParts = new ArrayList<>();
 	}
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		Key key;
-		
-		// Player chooses key they want to use.
-		// Ok so how tf do i do player I/O :)
-		
-		return new Actions(new unlockDoor(key, direction, location));
+		return new Actions();
 	}
 	
 	@Override
@@ -46,4 +33,5 @@ public class Door extends Ground {
 	public boolean blocksThrownObjects() {
 		return false;
 	}
+
 }
