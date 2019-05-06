@@ -7,8 +7,12 @@ import edu.monash.fit2099.engine.Actor;
 import edu.monash.fit2099.engine.Display;
 import edu.monash.fit2099.engine.FancyGroundFactory;
 import edu.monash.fit2099.engine.GameMap;
+import edu.monash.fit2099.engine.Item;
 import edu.monash.fit2099.engine.Player;
 import edu.monash.fit2099.engine.World;
+import edu.monash.fit2099.engine.Location;
+import edu.monash.fit2099.engine.Ground;
+import game.Door;
 
 public class Application {
 
@@ -41,8 +45,14 @@ public class Application {
 		Grunt grunt2 = new Grunt("Norbert", player);
 		gameMap.addActor(grunt2,  10, 10);
 		
+		Item body = new Item("Rocket Body", 'h');
+		Item engine = new Item("Rocket Engine", 'g');
+		Item plan = new Item("Rocket Plan", 'p');
+		
+		Ground door1 = gameMap.groundAt(new Location(gameMap, 9, 4));
+				
 		KeyManager manager = new KeyManager();
-		//manager.assignKey();
+		//manager.assignKey(door1);
 			
 		world.run();
 	}

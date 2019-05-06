@@ -1,14 +1,10 @@
 package game;
 
-import edu.monash.fit2099.demo.Floor;
-import edu.monash.fit2099.demo.WindowSmashAction;
 import edu.monash.fit2099.engine.Actor;
 import edu.monash.fit2099.engine.Ground;
 import edu.monash.fit2099.engine.Item;
 import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Action;
 import edu.monash.fit2099.engine.Actions;
-import edu.monash.fit2099.engine.Display;
 
 
 public class Door extends Ground {
@@ -29,12 +25,15 @@ public class Door extends Ground {
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		Key key;
+
+		// If player has the assigned key, allow them to unlock the door
+		for (int i = 0; i < actor.getInventory().size(); i++) {
+			if (actor.getInventory().get(i) == this.assignedKey) {
+				return new Actions(new unlockDoor(this.assignedKey, direction, location));
+			}
+		}
 		
-		// Player chooses key they want to use.
-		// Ok so how tf do i do player I/O :)
-		
-		return new Actions(new unlockDoor(key, direction, location));
+		return null;
 	}
 	
 	@Override
