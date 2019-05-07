@@ -18,7 +18,7 @@ public class placeEngine extends Action {
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item engine = new Item("Rocket Engine", 'g');
+		Item engine = new Item("Rocket Engine", 'e');
 
 		if (actor.getInventory().contains(engine)) {
 			actor.removeItemFromInventory(engine);

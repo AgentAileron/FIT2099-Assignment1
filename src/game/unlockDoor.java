@@ -7,25 +7,26 @@ import edu.monash.fit2099.engine.Location;
 
 public class unlockDoor extends Action {
 
-	private Key usedKey;
 	private Location doorLocation;
 	private String direction;
 	
-	public unlockDoor(Key usedKey, String direction, Location doorLocation) {
-		this.usedKey = usedKey;
+	public unlockDoor(String direction, Location doorLocation) {
 		this.direction = direction;
 		this.doorLocation = doorLocation;
 	}
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		if(usedKey.isSameKey(((Door) doorLocation.getGround()).getKey())) {
-			return actor + " has the wrong key.";
+		
+		for (int i = 0; i < actor.getInventory().size(); i++) {
+			if (actor.getInventory().get(i).getDisplayChar() == '$') {
+				map.add(new Floor(), doorLocation);
+				actor.removeItemFromInventory(actor.getInventory().get(i));
+				return "The door has been unlocked";
+			}
 		}
-		else {
-			map.add(new Floor(), doorLocation);
-			return "The door has been unlocked";
-		}
+		
+		return actor + " does not have a key";
 	}
 
 	@Override

@@ -45,14 +45,13 @@ public class Application {
 		Grunt grunt2 = new Grunt("Norbert", player);
 		gameMap.addActor(grunt2,  10, 10);
 		
+		Item key = new Item("Key", '$');
 		Item body = new Item("Rocket Body", 'h');
-		Item engine = new Item("Rocket Engine", 'g');
+		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		
-		Ground door1 = gameMap.groundAt(new Location(gameMap, 9, 4));
-				
-		KeyManager manager = new KeyManager();
-		//manager.assignKey(door1);
+		grunt.addItemToInventory(key);
+		gameMap.addItem(body, 2, 1);
 			
 		world.run();
 	}
