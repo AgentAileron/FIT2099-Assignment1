@@ -12,6 +12,7 @@ import edu.monash.fit2099.engine.Player;
 import edu.monash.fit2099.engine.World;
 import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Ground;
+import edu.monash.fit2099.engine.WeaponItem;
 import game.Door;
 
 public class Application {
@@ -52,7 +53,15 @@ public class Application {
 		
 		grunt.addItemToInventory(key);
 		gameMap.addItem(body, 2, 1);
-			
+		
+		WeaponItem lightsaber = new WeaponItem("Light Saber", '¬', 11, "slices");
+		
+		
+		Miniboss miniboss = new Miniboss("Dr Maybe");
+		miniboss.addItemToInventory(engine);
+		miniboss.addItemToInventory(lightsaber);
+		gameMap.addActor(miniboss, 16, 2);
+		
 		world.run();
 	}
 }
