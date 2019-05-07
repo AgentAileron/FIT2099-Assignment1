@@ -9,7 +9,6 @@ public class InsultBehavior extends Action implements ActionFactory{
     @Override
 	public String execute(Actor actor, GameMap map) {
         String output = actor + " hurls an insult! :\n";
-        Insults.values().
 
         return output;
 	}
@@ -17,6 +16,7 @@ public class InsultBehavior extends Action implements ActionFactory{
     @Override
 	public Action getAction(Actor actor, GameMap map) {
         // TODO
+        return null;
     }
 
     @Override
