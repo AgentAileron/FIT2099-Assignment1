@@ -3,11 +3,6 @@ import edu.monash.fit2099.engine.*;
 
 public class InsultBehavior extends Action implements ActionFactory{
 
-	public String execute(Actor actor, GameMap map) {
-        String output = actor + " hurls an insult! :\n";
-        return output;
-	}
-
     @Override
 	public Action getAction(Actor actor, GameMap map) {
         // TODO
@@ -15,8 +10,14 @@ public class InsultBehavior extends Action implements ActionFactory{
     }
 
     @Override
+	public String execute(Actor actor, GameMap map) {
+		return menuDescription(actor);
+	}
+
+	@Override
 	public String menuDescription(Actor actor) {
-		return "";
+        String output = actor + " hurls an insult! :\n";
+        return output;
 	}
 
 	@Override
