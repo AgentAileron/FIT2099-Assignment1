@@ -8,7 +8,7 @@ import java.util.List;
 public class Ninja extends Grunt {
 
 	public Ninja(String name, Actor player) {
-		super(name, player);
+		super(name, player, 'n');
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();

@@ -8,7 +8,8 @@ import java.util.List;
 public class Goon extends Grunt {
 
 	public Goon(String name, Actor player) {
-		super(name, player);
+		super(name, player, 'g');
+		addBehaviour(new InsultBehavior());
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();

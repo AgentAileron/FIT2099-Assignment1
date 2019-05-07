@@ -1,15 +1,10 @@
 package game;
-
-import com.sun.corba.se.impl.orbutil.closure.Constant;
-
 import edu.monash.fit2099.engine.*;
 
 public class InsultBehavior extends Action implements ActionFactory{
 
-    @Override
 	public String execute(Actor actor, GameMap map) {
         String output = actor + " hurls an insult! :\n";
-
         return output;
 	}
 
@@ -24,7 +19,7 @@ public class InsultBehavior extends Action implements ActionFactory{
 		return "";
 	}
 
-    @Override
+	@Override
 	public String hotKey() {
 		return "";
 	}

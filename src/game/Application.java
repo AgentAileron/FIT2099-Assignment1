@@ -40,17 +40,17 @@ public class Application {
 		Actor player = new Player("Player", '@', 1, 100);
 		world.addPlayer(player, gameMap, 2, 2);
 		
-		Grunt grunt = new Grunt("Mongo", player);
-		gameMap.addActor(grunt, 0, 0);
-		Grunt grunt2 = new Grunt("Norbert", player);
-		gameMap.addActor(grunt2,  10, 10);
+		Grunt testGoon = new Goon("Mongo", player);
+		gameMap.addActor(testGoon, 0, 0);
+		Grunt testNinja = new Ninja("Norbert", player);
+		gameMap.addActor(testNinja,  10, 10);
 		
 		Item key = new Item("Key", '$');
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		
-		grunt.addItemToInventory(key);
+		testGoon.addItemToInventory(key);
 		gameMap.addItem(body, 2, 1);
 			
 		world.run();
