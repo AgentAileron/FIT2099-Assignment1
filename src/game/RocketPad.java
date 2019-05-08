@@ -14,17 +14,15 @@ import java.util.*;
 public class RocketPad extends Ground {
 
 	public RocketPad() {
-		super('%');
-		
-		ArrayList<Item> placedParts = new ArrayList<>();
+		super('=');
 	}
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		ArrayList<Action> actions = new ArrayList<Action>();
+		Actions actions = new Actions();
 		actions.add(new placeBody(direction, location));
 		actions.add(new placeEngine(direction, location));
-		return new Actions(actions);
+		return actions;
 	}
 	
 	@Override
