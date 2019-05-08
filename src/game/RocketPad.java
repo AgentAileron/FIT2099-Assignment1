@@ -21,7 +21,10 @@ public class RocketPad extends Ground {
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		return new Actions();
+		ArrayList<Action> actions = new ArrayList<Action>();
+		actions.add(new placeBody(direction, location));
+		actions.add(new placeEngine(direction, location));
+		return new Actions(actions);
 	}
 	
 	@Override

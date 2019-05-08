@@ -27,7 +27,7 @@ public class Miniboss extends Actor {
 
 	@Override
 	public Action playTurn(Actions actions, GameMap map, Display display) {
-		//If player hasn't entered the room
+		//If player hasn't entered the room, the Miniboss won't be alert
 		if (alert == false)
 			return idle;
 		
@@ -36,6 +36,8 @@ public class Miniboss extends Actor {
 			if(action != null)
 				return action;
 		}
+		
+		
 		
 		return super.playTurn(actions,  map,  display);
 	}
