@@ -43,7 +43,7 @@ public class Application {
 		gameMap.addActor(testGrunt, 10, 5);
 
 		Actor testQ = new Qnpc(player);
-		gameMap.addActor(testQ, 8, 2);
+		gameMap.addActor(testQ, 8, 9);
 		
 		// TEMP - DEBUG ONLY
 		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));

@@ -24,16 +24,15 @@ public class TalkToQ extends Action {
 		return null;
 	}
 	
-	
 	@Override
 	public String execute(Actor actor, GameMap map) {
 		Item plan = playerHasItem(actor, 'p');
 		
 		if (plan != null) {
-			return subject + " blah";
+			return "I can give you something that will help, but I'm going to need plans.";
 		}
 		else {
-			return subject + " blah";
+			return "Hand them over, I don't have all day!";
 		}
 	}
 
