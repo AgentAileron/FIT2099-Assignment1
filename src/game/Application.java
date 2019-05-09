@@ -68,6 +68,9 @@ public class Application {
 		gameMap.addActor(miniboss, 17, 2);
 
 		gameMap.addItem(body, 2, 1);
+		
+		//player.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
+		//player.addItemToInventory(Item.newInventoryItem("Rocket Body", 'h'));
 			
 		world.run();
 
