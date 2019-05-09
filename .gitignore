@@ -149,3 +149,4 @@ fabric.properties
 
 # Bash files (exclude bash scripts)
 *.sh
+src/game/Application.java

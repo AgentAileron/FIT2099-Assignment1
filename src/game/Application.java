@@ -16,22 +16,22 @@ public class Application {
 		GameMap gameMap;
 
 		List<String> map = Arrays.asList(
-				".......................",
-				"....#####....######....",
-				"....#...#....#....#....",
-				"....#...D....#....#....",
-				"....#####....##D###....",
-				".......................",
-				".......................",
-				".......................",
-				".......................",
-				"...................=...",
-				".......................");
+				".............................",
+				"....########....######.......",
+				"....#......#....#....#.......",
+				"....#......D....#....#.......",
+				"....########....##D###.......",
+				".............................",
+				".............................",
+				".............................",
+				".............................",
+				"......................=......",
+				".............................");
 		gameMap = new GameMap(groundFactory, map);
 		world.addMap(gameMap);
 		
 		Actor player = new Player("Player", '@', 1, 100);
-		world.addPlayer(player, gameMap, 2, 15);
+		world.addPlayer(player, gameMap, 6, 15);
 		
 		Grunt testGoon = new Goon("Mongo", player);
 		gameMap.addActor(testGoon, 0, 0);
@@ -41,6 +41,9 @@ public class Application {
 
 		Grunt testGrunt = new Grunt("Obediah", player);
 		gameMap.addActor(testGrunt, 10, 5);
+
+		Actor testQ = new Qnpc(player);
+		gameMap.addActor(testQ, 8, 2);
 		
 		// TEMP - DEBUG ONLY
 		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
@@ -63,6 +66,9 @@ public class Application {
 			
 		world.run();
 		
+<<<<<<< HEAD
 		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
+=======
+>>>>>>> master
 	}
 }
