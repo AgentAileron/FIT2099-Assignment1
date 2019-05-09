@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Most basic hostile actor - follows player and deals melee damage when in range (can also drop keys and items)
+ * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
