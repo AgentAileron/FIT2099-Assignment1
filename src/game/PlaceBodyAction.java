@@ -6,12 +6,12 @@ import edu.monash.fit2099.engine.GameMap;
 import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Item;
 
-public class placeBody extends Action {
+public class PlaceBodyAction extends Action {
 	
 	private Location rocketPadLocation;
 	private String direction;
 
-	public placeBody(String direction, Location rocketPadLocation) {
+	public PlaceBodyAction(String direction, Location rocketPadLocation) {
 		this.direction = direction;
 		this.rocketPadLocation = rocketPadLocation;
 	}

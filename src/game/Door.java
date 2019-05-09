@@ -14,7 +14,7 @@ public class Door extends Ground {
 
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		return new Actions(new unlockDoor(direction, location));
+		return new Actions(new UnlockDoorAction(direction, location));
 	}
 	
 	@Override

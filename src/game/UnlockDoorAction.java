@@ -5,12 +5,12 @@ import edu.monash.fit2099.engine.Actor;
 import edu.monash.fit2099.engine.GameMap;
 import edu.monash.fit2099.engine.Location;
 
-public class unlockDoor extends Action {
+public class UnlockDoorAction extends Action {
 
 	private Location doorLocation;
 	private String direction;
 	
-	public unlockDoor(String direction, Location doorLocation) {
+	public UnlockDoorAction(String direction, Location doorLocation) {
 		this.direction = direction;
 		this.doorLocation = doorLocation;
 	}

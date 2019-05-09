@@ -14,7 +14,7 @@ public class Rocket extends Ground {
 	
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		return new Actions(new enterRocket(location));
+		return new Actions(new EnterRocketAction(location));
 	}
 	
 	@Override

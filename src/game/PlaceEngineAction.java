@@ -7,12 +7,12 @@ import edu.monash.fit2099.engine.GameMap;
 import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Item;
 
-public class placeEngine extends Action {
+public class PlaceEngineAction extends Action {
 	
 	private Location rocketPadLocation;
 	private String direction;
 
-	public placeEngine(String direction, Location rocketPadLocation) {
+	public PlaceEngineAction(String direction, Location rocketPadLocation) {
 		this.direction = direction;
 		this.rocketPadLocation = rocketPadLocation;
 	}

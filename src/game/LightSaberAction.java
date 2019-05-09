@@ -4,12 +4,12 @@ import game.ActionFactory;
 import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
-public class usesLightSaber extends Action implements ActionFactory {
+public class LightSaberAction extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public usesLightSaber(Actor subject) {
+	public LightSaberAction(Actor subject) {
 		this.target = subject;
 	}
 

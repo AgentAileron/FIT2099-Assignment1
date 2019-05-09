@@ -7,11 +7,11 @@ import edu.monash.fit2099.engine.GameMap;
 import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Item;
 
-public class enterRocket extends Action {
+public class EnterRocketAction extends Action {
 	
 	private Location rocketLocation;
 
-	public enterRocket(Location rocketLocation) {
+	public EnterRocketAction(Location rocketLocation) {
 		this.rocketLocation = rocketLocation;
 	}
 

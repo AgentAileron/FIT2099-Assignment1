@@ -18,7 +18,7 @@ public class Miniboss extends Actor {
 	
 	public Miniboss(String name, Actor player) {
 		super(name, '§', 6, 25);
-		addBehaviour(new usesLightSaber(player));
+		addBehaviour(new LightSaberAction(player));
 		addBehaviour(new shootsLazers(player));
 	}
 	
