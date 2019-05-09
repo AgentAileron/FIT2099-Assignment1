@@ -11,9 +11,10 @@ public class Grunt extends Actor {
 	public Grunt(String name, Actor player) {
 		super(name, 'g', 5, 50);
 		addBehaviour(new FollowBehaviour(player));
+		addBehaviour(new HostileAttackBehaviour(this, player));
 	}
 
-	// Overload for subclasses
+	// Overload for subclass
 	public Grunt(String name, Actor player, char mapIcon) {
 		super(name, mapIcon, 5, 50);
 		addBehaviour(new FollowBehaviour(player));

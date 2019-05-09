@@ -42,8 +42,12 @@ public class Application {
 		
 		Grunt testGoon = new Goon("Mongo", player);
 		gameMap.addActor(testGoon, 0, 0);
-		Grunt testNinja = new Ninja("Norbert", player);
-		gameMap.addActor(testNinja,  10, 10);
+
+		Ninja testNinja = new Ninja("Norbert", player);
+		gameMap.addActor(testNinja, 10, 10);
+
+		Grunt testGrunt = new Grunt("Obediah", player);
+		gameMap.addActor(testGrunt, 10, 5);
 		
 		
 		Item key = new Item("Key", '$');

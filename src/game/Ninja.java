@@ -5,10 +5,10 @@ import edu.monash.fit2099.engine.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ninja extends Grunt {
+public class Ninja extends Actor {
 
 	public Ninja(String name, Actor player) {
-		super(name, player, 'n');
+		super(name, 'n', 5, 50);
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
