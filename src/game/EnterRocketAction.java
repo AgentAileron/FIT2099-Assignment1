@@ -1,11 +1,6 @@
 package game;
 
-import edu.monash.fit2099.demo.Floor;
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Item;
+import edu.monash.fit2099.engine.*;
 
 /**
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
