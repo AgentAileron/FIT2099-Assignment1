@@ -36,8 +36,8 @@ public class Application {
 		world.addMap(gameMap);
 		
 		Actor player = new Player("Player", '@', 1, 100);
-		world.addPlayer(player, gameMap, 6, 15);
-		
+		world.addPlayer(player, gameMap, 8, 10);
+		/*
 		Grunt testGoon = new Goon("Mongo", player);
 		gameMap.addActor(testGoon, 0, 0);
 
@@ -46,7 +46,7 @@ public class Application {
 
 		Grunt testGrunt = new Grunt("Obediah", player);
 		gameMap.addActor(testGrunt, 10, 5);
-
+		*/
 		Actor testQ = new Qnpc(player);
 		gameMap.addActor(testQ, 8, 9);
 		
@@ -58,8 +58,8 @@ public class Application {
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		
-		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		//testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		//testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
 		gameMap.addItem(plan, 5, 2);
 		
