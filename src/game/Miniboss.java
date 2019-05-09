@@ -17,8 +17,9 @@ public class Miniboss extends Actor {
 	private Action idle = new SkipTurnAction();
 	
 	public Miniboss(String name, Actor player) {
-		super(name, '§', 5, 25);
+		super(name, '§', 6, 25);
 		addBehaviour(new usesLightSaber(player));
+		addBehaviour(new shootsLazers(player));
 	}
 	
 	private void addBehaviour(ActionFactory behaviour) {

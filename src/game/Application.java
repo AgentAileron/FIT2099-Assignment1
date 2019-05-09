@@ -14,6 +14,9 @@ import edu.monash.fit2099.engine.Location;
 import edu.monash.fit2099.engine.Ground;
 import edu.monash.fit2099.engine.WeaponItem;
 import game.Door;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Application {
 
@@ -53,22 +56,15 @@ public class Application {
 		grunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		grunt2.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
-		gameMap.addItem(body, 5, 2);
+		gameMap.addItem(plan, 5, 2);
 		
-		WeaponItem lightsaber = new WeaponItem("Light Saber", '¬', 11, "slices");
 		
 		Miniboss miniboss = new Miniboss("Dr Maybe", player);
-		miniboss.addItemToInventory(engine);
-		miniboss.addItemToInventory(lightsaber);
-		gameMap.addActor(miniboss, 16, 2);
-		
-		// TESTS START
-		
-		player.addItemToInventory(Item.newInventoryItem("Rocket Body", 'h'));
-		player.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		
-		// TESTS END
+		miniboss.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
+		gameMap.addActor(miniboss, 17, 2);
 		
 		world.run();
+		
+		
 	}
 }

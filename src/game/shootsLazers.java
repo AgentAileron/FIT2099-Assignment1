@@ -4,29 +4,32 @@ import game.ActionFactory;
 import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
-public class usesLightSaber extends Action implements ActionFactory {
+public class shootsLazers extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public usesLightSaber(Actor subject) {
+	public shootsLazers(Actor subject) {
 		this.target = subject;
 	}
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
 		if (rand.nextBoolean()) {
-			target.hurt(15);
+			target.hurt(10);
+			
 			if (!target.isConscious()) {
+				Item sleepingActor = new Item("Sleeping " + target, '%');
+				map.locationOf(target).addItem(sleepingActor);
 				map.removeActor(target);
 				// Game ends here :(
-				return "After taking a critical slash from " + actor + ", " + target + " has been knocked out. Oh no!";
+				return "After taking a critical shot from " + actor + ", " + target + " has been knocked out. Oh no!";
 			}
 			
-			return "Using his light saber, " + actor + " makes a mighty slash against " + target + System.lineSeparator() + target + " takes 15 damage.";
+			return actor + " shoots small lazer beams at " + target + System.lineSeparator() + target + " takes 10 damage.";
 		}
 		else {
-			return actor + " with great vigor, attempts to slash at " + target + " but lamely misses.";
+			return actor + " shoots at " + target + " but misses.";
 		}
 	}
 	
@@ -35,12 +38,8 @@ public class usesLightSaber extends Action implements ActionFactory {
 		Location here = map.locationOf(actor);
 		Location there = map.locationOf(target);
 
-		int distanceBetweenY = here.y() - there.y();
-		int distanceBetweenX = here.x() - there.x();
 		Range xs, ys;
-		
-		// If target is adjacent
-		if ((here.x() == there.x()) && (Math.abs(distanceBetweenY) == 1) || ((here.y() == there.y()) && (distanceBetweenX == 1))) {
+		if (here.x() == there.x() || here.y() == there.y()) {
 			xs = new Range(Math.min(here.x(), there.x()), Math.abs(here.x() - there.x()) + 1);
 			ys = new Range(Math.min(here.y(), there.y()), Math.abs(here.y() - there.y()) + 1);
 
@@ -50,10 +49,8 @@ public class usesLightSaber extends Action implements ActionFactory {
 						return null;
 				}
 			}
-			
 			return this;
 		}
-		
 		return null;
 	}
 
