@@ -7,21 +7,28 @@ import edu.monash.fit2099.engine.*;
 
 public class InsultBehavior extends Action implements ActionFactory{
 
+	public InsultBehavior(){
+	}
+
     @Override
 	public Action getAction(Actor actor, GameMap map) {
-        // TODO
-        return null;
+		// 10% chance of insult
+		if (Math.random() < 1.0){
+			return this;
+		}else{
+			return null;
+		}
     }
 
     @Override
 	public String execute(Actor actor, GameMap map) {
-		return menuDescription(actor);
+			String output = actor + " hurls an insult: " + randInsult();
+			return output;
 	}
 
 	@Override
 	public String menuDescription(Actor actor) {
-        String output = actor + " hurls an insult! :\n";
-        return output;
+        return "";
 	}
 
 	@Override
@@ -36,7 +43,7 @@ public class InsultBehavior extends Action implements ActionFactory{
 		if (Insults.size() == 0){
 			try{
 				// Buffered reader kinda overkill, but good practice / future proofing
-				FileReader reader = new FileReader("./Insults.txt");
+				FileReader reader = new FileReader("./src/game/Insults.txt");
 				BufferedReader br = new BufferedReader(reader);
 				
 				String line = br.readLine();
@@ -49,6 +56,7 @@ public class InsultBehavior extends Action implements ActionFactory{
 				br.close();
 			} catch (IOException e) {
 				// Do nothing - empty / missing files handled below
+				System.out.println("Err in reading insult file");	// TEMP
 			}
 		}
 

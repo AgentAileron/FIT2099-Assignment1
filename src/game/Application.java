@@ -45,6 +45,7 @@ public class Application {
 		Grunt testNinja = new Ninja("Norbert", player);
 		gameMap.addActor(testNinja,  10, 10);
 		
+		
 		Item key = new Item("Key", '$');
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
