@@ -3,16 +3,7 @@ package game;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.Display;
-import edu.monash.fit2099.engine.FancyGroundFactory;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Item;
-import edu.monash.fit2099.engine.Player;
-import edu.monash.fit2099.engine.World;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Ground;
-import edu.monash.fit2099.engine.WeaponItem;
+import edu.monash.fit2099.engine.*;
 import game.Door;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -44,25 +35,26 @@ public class Application {
 		Actor player = new Player("Player", '@', 1, 100);
 		world.addPlayer(player, gameMap, 2, 15);
 		
-		Grunt grunt = new Grunt("Mongo", player);
-		gameMap.addActor(grunt, 0, 0);
-		Grunt grunt2 = new Grunt("Norbert", player);
-		gameMap.addActor(grunt2,  10, 10);
+		Grunt testGoon = new Goon("Mongo", player);
+		gameMap.addActor(testGoon, 0, 0);
+
+		Ninja testNinja = new Ninja("Norbert", player);
+		gameMap.addActor(testNinja, 10, 10);
+
+		Grunt testGrunt = new Grunt("Obediah", player);
+		gameMap.addActor(testGrunt, 10, 5);
+		
+		// TEMP - DEBUG ONLY
+		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
+
 		
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		
-		grunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		grunt2.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		
-		gameMap.addItem(plan, 5, 2);
-		
-		
-		Miniboss miniboss = new Miniboss("Dr Maybe", player);
-		miniboss.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		gameMap.addActor(miniboss, 17, 2);
-		
+		testGoon.addItemToInventory(key);
+		gameMap.addItem(body, 2, 1);
+			
 		world.run();
 		
 		
