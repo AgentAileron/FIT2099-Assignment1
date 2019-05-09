@@ -9,6 +9,7 @@ public class Ninja extends Actor {
 
 	public Ninja(String name, Actor player) {
 		super(name, 'n', 5, 50);
+		addBehaviour(new NinjaBehaviour(player));
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();

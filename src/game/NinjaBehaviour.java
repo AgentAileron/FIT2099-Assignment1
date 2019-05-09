@@ -18,14 +18,15 @@ public class NinjaBehaviour implements ActionFactory{
 
     int currentDistance = distance(here, there);
 
-    Location shiftX = new Location(map, (2*here.x()) - there.x(), here.y());
-    Location shiftY = new Location(map, here.x(), (2*here.y()) - there.y());
-    
     if (currentDistance <= 5){
-      if (isValidLocation(map, actor, shiftX)){
-        return new MoveActorAction(shiftX, direction);
-      }else if (isValidLocation(map, actor, shiftX)){
-        return new MoveActorAction(shiftX, direction);
+      for (Exit exit : here.getExits()) {
+        Location destination = exit.getDestination();
+        if (destination.canActorEnter(actor)) {
+          int newDistance = distance(destination, there);
+          if (newDistance > currentDistance) { // Simply invert condition from FollowBehaviour
+            return new MoveActorAction(destination, exit.getName());
+          }
+        }
       }
     }
     return new NPCSkipTurnAction(); // Don't move if out of range or cornered
