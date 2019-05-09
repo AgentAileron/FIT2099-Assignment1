@@ -4,6 +4,11 @@ import game.ActionFactory;
 import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
+/**
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class shootsLazers extends Action implements ActionFactory {
 
 	private Actor target;

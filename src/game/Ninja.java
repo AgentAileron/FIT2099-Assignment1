@@ -5,6 +5,11 @@ import edu.monash.fit2099.engine.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class Ninja extends Actor {
 
 	public Ninja(String name, Actor player) {
