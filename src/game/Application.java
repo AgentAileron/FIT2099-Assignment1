@@ -65,10 +65,7 @@ public class Application {
 		gameMap.addItem(body, 2, 1);
 			
 		world.run();
-		
-<<<<<<< HEAD
+
 		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
-=======
->>>>>>> master
 	}
 }
