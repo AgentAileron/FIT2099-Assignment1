@@ -11,8 +11,7 @@ public class InsultBehavior extends Action implements ActionFactory{
 		"I smell your fear!"
 		};
 
-	public InsultBehavior(){
-	}
+	public InsultBehavior(){}
 
     @Override
 	public Action getAction(Actor actor, GameMap map) {
@@ -42,7 +41,6 @@ public class InsultBehavior extends Action implements ActionFactory{
 	}
 
 	private String randInsult(){
-		
 		// If no insults defined return default insult
 		if (Insults.length == 0){
 			return "Grr!";

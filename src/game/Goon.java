@@ -10,6 +10,8 @@ public class Goon extends Grunt {
 	public Goon(String name, Actor player) {
 		super(name, player, 'G');
 		addBehaviour(new InsultBehavior());
+		Item tazer = new WeaponItem("tazer", '^', 10, "zaps");
+		addItemToInventory(tazer);
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
