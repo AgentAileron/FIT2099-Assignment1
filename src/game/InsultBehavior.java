@@ -2,6 +2,13 @@ package game;
 
 import edu.monash.fit2099.engine.*;
 
+/**
+ * Behaviour special to Goon - doesn't affect game environment, passes an insult text to the console
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class InsultBehavior extends Action implements ActionFactory{
 
 	// Contains list of possible insults
