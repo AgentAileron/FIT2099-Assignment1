@@ -17,7 +17,7 @@ public class Application {
 	public static void main(String[] args) {
 		World world = new World(new Display());
 
-		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket());
+		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket(), new AllowableActionsForQ());
 		GameMap gameMap;
 
 		List<String> map = Arrays.asList(
@@ -27,7 +27,7 @@ public class Application {
 				"....#......D....#....#.......",
 				"....########....##D###.......",
 				".............................",
-				".............................",
+				"...........................q.",
 				".............................",
 				".............................",
 				"......................=......",
@@ -48,7 +48,7 @@ public class Application {
 		gameMap.addActor(testGrunt, 10, 5);
 
 		Actor testQ = new Qnpc(player);
-		gameMap.addActor(testQ, 8, 2);
+		gameMap.addActor(testQ, 23, 2);
 		
 		// TEMP - DEBUG ONLY
 		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
