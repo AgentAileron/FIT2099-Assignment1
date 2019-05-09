@@ -18,7 +18,7 @@ public class NinjaBehaviour implements ActionFactory{
 
     int currentDistance = distance(here, there);
 
-    if (currentDistance <= 5){
+    if (currentDistance < 5){
       for (Exit exit : here.getExits()) {
         Location destination = exit.getDestination();
         if (destination.canActorEnter(actor)) {
@@ -35,15 +35,5 @@ public class NinjaBehaviour implements ActionFactory{
   // Proper distance
 	private int distance(Location a, Location b) {
 		return (int) Math.sqrt((a.x() - b.x())^2 + (a.y() - b.y())^2);
-  }
-  
-  // Check that a map location is valid to move to 
-  private boolean isValidLocation(GameMap map, Actor actor, Location loc){
-    if (!(map.isAnActorAt(loc))){
-      if (map.groundAt(loc).canActorEnter(actor)){
-        return true;
-      }
-    }
-    return false;
   }
 }

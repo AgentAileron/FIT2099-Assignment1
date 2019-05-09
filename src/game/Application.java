@@ -3,15 +3,7 @@ package game;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.Display;
-import edu.monash.fit2099.engine.FancyGroundFactory;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Item;
-import edu.monash.fit2099.engine.Player;
-import edu.monash.fit2099.engine.World;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Ground;
+import edu.monash.fit2099.engine.*;
 import game.Door;
 
 public class Application {
@@ -49,6 +41,9 @@ public class Application {
 		Grunt testGrunt = new Grunt("Obediah", player);
 		gameMap.addActor(testGrunt, 10, 5);
 		
+		// TEMP - DEBUG ONLY
+		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
+
 		
 		Item key = new Item("Key", '$');
 		Item body = new Item("Rocket Body", 'h');

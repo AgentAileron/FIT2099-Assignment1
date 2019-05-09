@@ -9,6 +9,7 @@ public class Ninja extends Actor {
 
 	public Ninja(String name, Actor player) {
 		super(name, 'n', 5, 50);
+		addBehaviour(new StunBehaviour(this, player));
 		addBehaviour(new NinjaBehaviour(player));
 	}
 
