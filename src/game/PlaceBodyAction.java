@@ -1,18 +1,18 @@
 package game;
 
-import edu.monash.fit2099.demo.Floor;
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Item;
+import edu.monash.fit2099.engine.*;
 
-public class placeEngine extends Action {
+/**
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
+public class PlaceBodyAction extends Action {
 	
 	private Location rocketPadLocation;
 	private String direction;
 
-	public placeEngine(String direction, Location rocketPadLocation) {
+	public PlaceBodyAction(String direction, Location rocketPadLocation) {
 		this.direction = direction;
 		this.rocketPadLocation = rocketPadLocation;
 	}
@@ -39,32 +39,32 @@ public class placeEngine extends Action {
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item engine = playerHasItem(actor, 'e');
-		Item body = rocketPadHasItem('h');
+		Item body = playerHasItem(actor, 'h');
+		Item engine = rocketPadHasItem('e');
 		
-		if (engine != null) {
-			actor.removeItemFromInventory(engine);
-			rocketPadLocation.addItem(engine);
+		if (body != null) {
+			actor.removeItemFromInventory(body);
+			rocketPadLocation.addItem(body);
 			
-			if (body != null) {
+			if (engine != null) {
 				// Clear inventory
 				rocketPadLocation.removeItem(body);
 				rocketPadLocation.removeItem(engine);
 				
 				map.add(new Rocket(), rocketPadLocation);
-				return actor + " has placed the rocket engine.\nThe rocket has now been completed.";
+				return actor + " has placed the rocket body.\nThe rocket has now been completed.";
 			}
 			
-			return actor + " has placed the rocket engine.";
+			return actor + " has placed the rocket body.";
 		}
 		else {
-			return actor + " does not have a rocket engine part.";
+			return actor + " does not have a rocket body part.";
 		}
 	}
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return actor + " places rocket engine onto rocket pad in the " + direction;
+		return actor + " places rocket body onto rocket pad in the " + direction;
 	}
 
 	@Override

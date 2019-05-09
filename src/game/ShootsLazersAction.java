@@ -1,15 +1,22 @@
 package game;
 
-import game.ActionFactory;
 import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
-public class shootsLazers extends Action implements ActionFactory {
+/**
+ * Action for miniboss - ranged attack on player when line of sight in vertical / horizontal
+ * is available
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
+public class ShootsLazersAction extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public shootsLazers(Actor subject) {
+	public ShootsLazersAction(Actor subject) {
 		this.target = subject;
 	}
 

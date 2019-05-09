@@ -1,15 +1,19 @@
 package game;
 
-import game.ActionFactory;
 import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
-public class usesLightSaber extends Action implements ActionFactory {
+/**
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
+public class LightSaberAction extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public usesLightSaber(Actor subject) {
+	public LightSaberAction(Actor subject) {
 		this.target = subject;
 	}
 

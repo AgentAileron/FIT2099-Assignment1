@@ -5,6 +5,14 @@ import edu.monash.fit2099.engine.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Hostile actor which is a subclass of Grunt - effectively a grunt which has a tazer (higher damage)
+ * and has a 10% chance of hurling an insult 
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class Goon extends Grunt {
 
 	public Goon(String name, Actor player) {
