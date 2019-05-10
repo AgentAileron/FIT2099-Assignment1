@@ -22,34 +22,38 @@ public class Application {
 		GameMap gameMap;
 
 		List<String> map = Arrays.asList(
-				".............................",
-				"....########....######.......",
-				"....#......#....#....#.......",
-				"....#......D....#....#.......",
-				"....########....##D###.......",
-				".............................",
-				".............................",
-				".............................",
-				".............................",
-				"......................=......",
-				".............................");
+			".................................",
+			"...#####D#####....###............",
+			"...#.........#.....#.............",
+			"...#.........#...........#.#.#...",
+			"...#......###...........#.....#..",
+			"...##D#####..............#...#...",
+			"..............#.#....##..#...#...",
+			"..............###....#...........",
+			".........#.....#.............#...",
+			"..#......#.....#.................",
+			".........###.........#######.....",
+			"....................#.......#....",
+			".....#..............D...=...#....",
+			"...........#........#.......#....",
+			"....................#########....");
 		gameMap = new GameMap(groundFactory, map);
 		world.addMap(gameMap);
 		
 		Actor player = new Player("Player", '@', 1, 100);
-		world.addPlayer(player, gameMap, 8, 10);
-		/*
+		world.addPlayer(player, gameMap, 4, 19);
+		
 		Grunt testGoon = new Goon("Mongo", player);
 		gameMap.addActor(testGoon, 0, 0);
 
 		Ninja testNinja = new Ninja("Norbert", player);
-		gameMap.addActor(testNinja, 10, 10);
+		gameMap.addActor(testNinja, 14, 12);
 
 		Grunt testGrunt = new Grunt("Obediah", player);
 		gameMap.addActor(testGrunt, 10, 5);
-		*/
+		
 		Actor testQ = new Qnpc(player);
-		gameMap.addActor(testQ, 8, 9);
+		gameMap.addActor(testQ, 27, 4);
 		
 		// TEMP - DEBUG ONLY
 		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
@@ -59,14 +63,14 @@ public class Application {
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		
-		//testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		//testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
-		gameMap.addItem(plan, 5, 2);
+		gameMap.addItem(plan, 6, 3);
 		
 		Miniboss miniboss = new Miniboss("Dr Maybe", player);
 		miniboss.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		gameMap.addActor(miniboss, 17, 2);
+		gameMap.addActor(miniboss, 26, 12);
 
 		gameMap.addItem(body, 2, 1);
 			
