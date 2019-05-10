@@ -11,11 +11,11 @@ import edu.monash.fit2099.engine.*;
  * @version     1.0
  * @since       1.0
  */
-public class TalkToQ extends Action {
+public class TalkToQAction extends Action {
 	
 	private Actor subject;
 
-	public TalkToQ(Actor subject) {
+	public TalkToQAction(Actor subject) {
 		this.subject = subject;
 	}
 

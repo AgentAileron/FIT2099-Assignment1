@@ -28,6 +28,10 @@ public class HostileAttackBehaviour implements ActionFactory {
     
     @Override
 	public Action getAction(Actor actor, GameMap map) {
+        if (target == null){	// Safety check, in case target despawns
+			return null;
+        }
+        
         Integer range = distance(map.locationOf(attacker), map.locationOf(subject));
         if (range <= 1){
             return new AttackAction(actor, subject);
