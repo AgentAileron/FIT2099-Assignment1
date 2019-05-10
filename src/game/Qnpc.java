@@ -8,13 +8,11 @@ import java.util.*;
  * Performs random walk of map when idle
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
- * @author      Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Sarah Dennis <SDEN0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
 public class Qnpc extends Actor {
-
-		public Boolean readyForExile = false;
 
     public Qnpc(Actor player){
 		super("Q", 'Q', 4, 9999);

@@ -9,7 +9,7 @@ import edu.monash.fit2099.engine.*;
  * Main game driver - initialises world and handles all calls (contains main)
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
- * @author      Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Sarah Dennis <SDEN0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
@@ -43,10 +43,6 @@ public class Application {
 			"....................#########....");
 		gameMap = new GameMap(groundFactory, map);
 		world.addMap(gameMap);
-
-		List<String> QsExileMap = Arrays.asList(".");
-		GameMap QsExile = new GameMap(groundFactory, QsExileMap);
-		world.addMap(QsExile);
 		
 		Actor player = new Player("Player", '@', 1, 100);
 		world.addPlayer(player, gameMap, 4, 19);
@@ -70,10 +66,6 @@ public class Application {
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
-		
-		Item QExiler = new Item("Q's Teleportation Device", '5');
-		QExiler.getAllowableActions().add(new MoveActorAction(QsExile.at(0, 0), "Carry on my wayward son"));
-		testQ.addItemToInventory(QExiler);
 
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));

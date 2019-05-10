@@ -10,7 +10,7 @@ import java.util.List;
  * 50% chance of stunning player whilst within 5 units, player loses two turns per stun
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
- * @author      Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Sarah Dennis <SDEN0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
