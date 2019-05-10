@@ -1,10 +1,6 @@
 package game;
 
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Item;
+import edu.monash.fit2099.engine.*;
 
 public class TalkToQ extends Action {
 	
@@ -24,16 +20,15 @@ public class TalkToQ extends Action {
 		return null;
 	}
 	
-	
 	@Override
 	public String execute(Actor actor, GameMap map) {
 		Item plan = playerHasItem(actor, 'p');
 		
 		if (plan != null) {
-			return subject + " blah";
+			return "I can give you something that will help, but I'm going to need plans.";
 		}
 		else {
-			return subject + " blah";
+			return "Hand them over, I don't have all day!";
 		}
 	}
 
@@ -44,6 +39,6 @@ public class TalkToQ extends Action {
 
 	@Override
 	public String hotKey() {
-		return "";
+		return "t";
 	}
 }
