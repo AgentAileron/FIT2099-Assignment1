@@ -9,3 +9,7 @@ This file is not provided due to any work dispute within the group, but because 
 [Sequence Diagrams Lucidchart File](https://www.lucidchart.com/invitations/accept/6eb250ff-59ba-4b8a-8705-05760a00c1db)
 
 [Design Rationale Google Docs File](https://docs.google.com/document/d/13gkpdKJ2BVHO08hB7EjSh1ny-zHHiIQiytN-20pL-no/edit?usp=sharing)
+
+##// Assignment 2 links //
+
+[Design Decisions Google Docs File](https://docs.google.com/document/d/1o29MnXWWx2QLNALcA0xIrgLFVAxlWk3VBHWqV69OgsQ/edit?usp=sharing)

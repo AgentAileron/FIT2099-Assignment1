@@ -1,7 +1,0 @@
-// TODO //
-	> Mention UML in design rationale
-	> Go over the spec, confirm nothing missing
-	> Go over the purple points in spec
-	
-	> Making writing consistent
-	> Actually upload all the docs
