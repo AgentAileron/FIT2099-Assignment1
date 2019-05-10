@@ -6,7 +6,11 @@ import java.util.List;
 import edu.monash.fit2099.engine.*;
 
 /**
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * Miniboss hostile NPC ("Doctor Maybe")
+ * Extends actor but uses certain attacks and weapons unique from lesser enemies
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
@@ -15,10 +19,16 @@ public class Miniboss extends Actor {
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
 	private Action idle = new SkipTurnAction();
 	
+	/**
+	 * Instantiate a Miniboss - can be done many times,
+	 * likely only one instance will be used for actual game
+	 * @param name
+	 * @param player
+	 */
 	public Miniboss(String name, Actor player) {
 		super(name, '§', 6, 25);
 		addBehaviour(new LightSaberAction(player));
-		addBehaviour(new ShootsLazersAction(player));
+		addBehaviour(new ShootLazerAction(player));
 	}
 	
 	private void addBehaviour(ActionFactory behaviour) {

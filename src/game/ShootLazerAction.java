@@ -4,19 +4,20 @@ import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
 /**
- * Action for miniboss - ranged attack on player when line of sight in vertical / horizontal
+ * Special action for miniboss - ranged attack on player when line of sight in vertical / horizontal
  * is available
  * 
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
-public class ShootsLazersAction extends Action implements ActionFactory {
+public class ShootLazerAction extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public ShootsLazersAction(Actor subject) {
+	public ShootLazerAction(Actor subject) {
 		this.target = subject;
 	}
 

@@ -3,7 +3,12 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * Fully built rocket
+ * Will be constructed by player upon placing all parts on rocket pad
+ * Allows teleportation / warping to next stage, or triggering win condition
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */

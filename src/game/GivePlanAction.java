@@ -1,15 +1,23 @@
 package game;
 
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.Item;
+import edu.monash.fit2099.engine.*;
 
+/**
+ * Action for player to give plan to Q (provisions replacement of plans with rocket parts in inventory)
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class GivePlanAction extends Action {
 	
 	private Actor subject;
 
+	/**
+	 * Instantiate an action instance
+	 * @param subject The actor facilitating trades (EG: Q)
+	 */
 	public GivePlanAction(Actor subject) {
 		this.subject = subject;
 	}
@@ -59,6 +67,6 @@ public class GivePlanAction extends Action {
 
 	@Override
 	public String hotKey() {
-		return "";
+		return "p";
 	}
 }

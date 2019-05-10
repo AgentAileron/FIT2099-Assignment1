@@ -4,7 +4,10 @@ import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
 /**
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * Miniboss special attack - high damage close range attack on player
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
@@ -13,6 +16,11 @@ public class LightSaberAction extends Action implements ActionFactory {
 	private Actor target;
 	private Random rand = new Random();
 
+	/**
+	 * Instantiates the lightsaber action (for miniboss)
+	 * 
+	 * @param subject the target actor (EG: Player)
+	 */
 	public LightSaberAction(Actor subject) {
 		this.target = subject;
 	}

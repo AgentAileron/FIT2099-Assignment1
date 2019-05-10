@@ -3,7 +3,11 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * Action for player to interact with rocket pad - places engine part
+ * (Do we need seperate methods for body and engine tho?)
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
