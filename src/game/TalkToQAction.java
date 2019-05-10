@@ -35,10 +35,10 @@ public class TalkToQAction extends Action {
 		Item plan = playerHasItem(actor, 'p');
 		
 		if (plan != null) {
-			return "I can give you something that will help, but I'm going to need plans.";
+			return "Hand them over, I don't have all day!";
 		}
 		else {
-			return "Hand them over, I don't have all day!";
+			return "I can give you something that will help, but I'm going to need plans.";
 		}
 	}
 
