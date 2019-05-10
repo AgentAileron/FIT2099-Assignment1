@@ -5,7 +5,8 @@ import edu.monash.fit2099.engine.*;
 /**
  * Behaviour to handle stuns by Ninja - only allows stuns when Ninja is at least 5 units from player
  * 
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */

@@ -6,7 +6,8 @@ import edu.monash.fit2099.engine.*;
  * Behaviour for hostile attacking - essentially restricts all attacks by grunts and goons
  * to melee only (distance of 1 or less to the player)
  * 
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */

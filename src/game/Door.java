@@ -5,7 +5,8 @@ import edu.monash.fit2099.engine.*;
 /**
  * Type of wall which may be made passable if the player uses a key on it
  * 
- * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
