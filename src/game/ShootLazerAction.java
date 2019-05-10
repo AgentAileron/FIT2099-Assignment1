@@ -12,12 +12,12 @@ import java.util.Random;
  * @version     1.0
  * @since       1.0
  */
-public class ShootsLazersAction extends Action implements ActionFactory {
+public class ShootLazerAction extends Action implements ActionFactory {
 
 	private Actor target;
 	private Random rand = new Random();
 
-	public ShootsLazersAction(Actor subject) {
+	public ShootLazerAction(Actor subject) {
 		this.target = subject;
 	}
 

@@ -22,7 +22,7 @@ public class Miniboss extends Actor {
 	public Miniboss(String name, Actor player) {
 		super(name, '§', 6, 25);
 		addBehaviour(new LightSaberAction(player));
-		addBehaviour(new ShootsLazersAction(player));
+		addBehaviour(new ShootLazerAction(player));
 	}
 	
 	private void addBehaviour(ActionFactory behaviour) {
