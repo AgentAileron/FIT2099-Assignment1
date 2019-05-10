@@ -17,7 +17,7 @@ public class Application {
 	public static void main(String[] args) {
 		World world = new World(new Display());
 
-		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket(), new AllowableActionsForQ());
+		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket());
 		GameMap gameMap;
 
 		List<String> map = Arrays.asList(
@@ -27,7 +27,7 @@ public class Application {
 				"....#......D....#....#.......",
 				"....########....##D###.......",
 				".............................",
-				"...........................q.",
+				".............................",
 				".............................",
 				".............................",
 				"......................=......",
