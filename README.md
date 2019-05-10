@@ -6,7 +6,7 @@ Group name: _teh\_cursed\_ones_
 **Assignment 1:** All relevant documents uploaded to `./docs/Assignment\ 1/`, full commit / contribution histories available in `./docs/contributions.md`
 
 
-**Assignment 2:** TBA
+**Assignment 2:** All relevant documents and progress on master (latest commit tagged with "*Assignment 2*")
 
 --------------------------------------------------------
 

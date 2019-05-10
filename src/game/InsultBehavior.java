@@ -16,7 +16,10 @@ public class InsultBehavior extends Action implements ActionFactory{
 	private static String[] Insults = {
 		"You fool, you will perish at the hands of &&&!",
 		"Doom approaches!",
-		"I smell your fear!"
+		"I smell your fear!",
+		"You can run, but &&& will find you COWARD!!",
+		"You've drawn your final breath, Mr Bond",
+		"YOU WILL PERISH BENEATH THE BOOT OF &&&"
 		};
 
 	public InsultBehavior(){}
