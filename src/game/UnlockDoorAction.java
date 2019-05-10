@@ -1,16 +1,20 @@
 package game;
-import edu.monash.fit2099.demo.Floor;
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
 
-public class unlockDoor extends Action {
+import edu.monash.fit2099.engine.*;
+
+/**
+ * Action for player to unlock doors. If player has key, door may be unlocked and key consumed (any key to any door).
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
+public class UnlockDoorAction extends Action {
 
 	private Location doorLocation;
 	private String direction;
 	
-	public unlockDoor(String direction, Location doorLocation) {
+	public UnlockDoorAction(String direction, Location doorLocation) {
 		this.direction = direction;
 		this.doorLocation = doorLocation;
 	}

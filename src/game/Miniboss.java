@@ -3,14 +3,13 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actions;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.Display;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Location;
-import edu.monash.fit2099.engine.SkipTurnAction;
+import edu.monash.fit2099.engine.*;
 
+/**
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu>, Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class Miniboss extends Actor {
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
@@ -18,8 +17,8 @@ public class Miniboss extends Actor {
 	
 	public Miniboss(String name, Actor player) {
 		super(name, '§', 6, 25);
-		addBehaviour(new usesLightSaber(player));
-		addBehaviour(new shootsLazers(player));
+		addBehaviour(new LightSaberAction(player));
+		addBehaviour(new ShootsLazersAction(player));
 	}
 	
 	private void addBehaviour(ActionFactory behaviour) {
