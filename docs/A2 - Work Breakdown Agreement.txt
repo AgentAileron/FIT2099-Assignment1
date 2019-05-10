@@ -1,5 +1,18 @@
 // Work Breakdown Agreement - Assignment 2 //
-	
-		
+	    > Sub-Systems
+	        - Items [#]
+	        - Grunts (Ninja/Goon) [*]
+	        - Q [*]
+	        - Miniboss [#]
+	        - Rocket [#]
+	        - Application [B]
+	    
+	    > Design Decisions Document
+	        - Members write about the design decisions they made on the sections of code they worked on [B]
+	    
 	DIGISIGNS:
+    	- Rithesh R Jayaram (5/5/2019) [*]
+		- Sarah D Dennis (5/5/2019) [#]
+
+    NOTE: B represents both members
 		
