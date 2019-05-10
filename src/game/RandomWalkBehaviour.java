@@ -26,6 +26,12 @@ public class RandomWalkBehaviour implements ActionFactory{
                 }
             }
         }
+        if (actor instanceof Qnpc){
+            Qnpc Q = (Qnpc) actor;
+            if (Q.readyForExile){
+                return null;
+            }
+        }
 		return new NPCSkipTurnAction();
 	}
 }

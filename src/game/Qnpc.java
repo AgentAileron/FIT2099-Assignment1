@@ -14,6 +14,8 @@ import java.util.*;
  */
 public class Qnpc extends Actor {
 
+		public Boolean readyForExile = false;
+
     public Qnpc(Actor player){
 		super("Q", 'Q', 4, 9999);
 		addBehaviour(new RandomWalkBehaviour());
