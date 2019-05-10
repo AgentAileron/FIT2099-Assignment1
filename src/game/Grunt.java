@@ -16,13 +16,24 @@ import java.util.List;
 public class Grunt extends Actor {
 
 	// Grunts have 50 hitpoints and are always represented with a g
+	/**
+	 * Instantiate a Grunt - grunts have 40 hp and are always represented by a g
+	 * @param name
+	 * @param player
+	 */
 	public Grunt(String name, Actor player) {
 		super(name, 'g', 5, 50);
 		addBehaviour(new FollowBehaviour(player));
 		addBehaviour(new HostileAttackBehaviour(this, player));
 	}
 
-	// Overload for subclass
+	/**
+	 * Constructor overload which allows a mapicon to be specified: 
+	 * should only be used by Goon subclass
+	 * @param name
+	 * @param player
+	 * @param mapIcon
+	 */
 	public Grunt(String name, Actor player, char mapIcon) {
 		super(name, mapIcon, 5, 50);
 		addBehaviour(new FollowBehaviour(player));

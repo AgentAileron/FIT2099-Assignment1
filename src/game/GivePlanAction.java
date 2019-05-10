@@ -14,6 +14,10 @@ public class GivePlanAction extends Action {
 	
 	private Actor subject;
 
+	/**
+	 * Instantiate an action instance
+	 * @param subject The actor facilitating trades (EG: Q)
+	 */
 	public GivePlanAction(Actor subject) {
 		this.subject = subject;
 	}

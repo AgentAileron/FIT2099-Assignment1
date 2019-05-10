@@ -12,6 +12,9 @@ import edu.monash.fit2099.engine.*;
  */
 public class Door extends Ground {
 
+	/**
+	 * Instantiate a door panel
+	 */
 	public Door() {
 		super('D');
 	}

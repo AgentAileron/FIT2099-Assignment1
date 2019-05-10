@@ -12,6 +12,9 @@ import edu.monash.fit2099.engine.Ground;
  */
 public class Floor extends Ground {
 
+	/**
+	 * Instantiate a default ground panel
+	 */
 	public Floor() {
 		super('.');
 	}

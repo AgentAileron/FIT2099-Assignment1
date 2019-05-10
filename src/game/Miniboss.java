@@ -19,6 +19,12 @@ public class Miniboss extends Actor {
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
 	private Action idle = new SkipTurnAction();
 	
+	/**
+	 * Instantiate a Miniboss - can be done many times,
+	 * likely only one instance will be used for actual game
+	 * @param name
+	 * @param player
+	 */
 	public Miniboss(String name, Actor player) {
 		super(name, '§', 6, 25);
 		addBehaviour(new LightSaberAction(player));

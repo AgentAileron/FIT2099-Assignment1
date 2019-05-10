@@ -15,12 +15,20 @@ public class FollowBehaviour implements ActionFactory {
 
 	private Actor target;
 
+	/**
+	 * Create new bahviour handler for following another Actor
+	 * @param subject Actor to follow
+	 */
 	public FollowBehaviour(Actor subject) {
 		this.target = subject;
 	}
 
 	@Override
 	public Action getAction(Actor actor, GameMap map) {
+		if (target == null){	// Safety check, in case target despawns
+			return null;
+		}
+
 		Location here = map.locationOf(actor);
 		Location there = map.locationOf(target);
 

@@ -16,6 +16,11 @@ public class HostileAttackBehaviour implements ActionFactory {
     private Actor attacker;
     private Actor subject;
     
+    /**
+     * Instantiate a new hostile attack behaviour for an Actor
+     * @param actor The actor being assigned to - the hostile NPC
+     * @param subject The target actor (EG: the player)
+     */
     public HostileAttackBehaviour(Actor actor, Actor subject) {
         this.attacker = actor;
         this.subject = subject;
