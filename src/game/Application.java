@@ -77,8 +77,12 @@ public class Application {
 		gameMap.addActor(miniboss, 26, 12);
 
 		gameMap.addItem(body, 2, 1);
+		
+		//player.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
+		//player.addItemToInventory(Item.newInventoryItem("Rocket Body", 'h'));
 			
 		world.run();
-		
+
+		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
 	}
 }

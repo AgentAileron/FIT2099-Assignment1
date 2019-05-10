@@ -68,7 +68,7 @@ public class PlaceEngineAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return actor + " places rocket engine onto rocket pad in the " + direction;
+		return actor + " attempts to place rocket engine onto rocket pad";
 	}
 
 	@Override

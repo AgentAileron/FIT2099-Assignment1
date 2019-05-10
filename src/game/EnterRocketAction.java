@@ -20,7 +20,8 @@ public class EnterRocketAction extends Action {
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		return actor + " has entered the rocket.";
+		map.removeActor(actor);
+		return actor + " has entered the rocket and has made their escape into outer space./nCongratulations, you win!";
 	}
 
 	@Override

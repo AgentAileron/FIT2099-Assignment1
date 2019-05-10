@@ -24,7 +24,15 @@ public class Qnpc extends Actor {
 	private void addBehaviour(ActionFactory behaviour) {
 		actionFactories.add(behaviour);
 	}
-
+	
+	@Override
+	public Actions getAllowableActions(Actor otherActor, String direction, GameMap map) {
+		Actions actions = new Actions();
+		actions.add(new TalkToQ(this));
+		actions.add(new GivePlanAction(this));
+		return actions;
+	}
+	
 	@Override
 	public Action playTurn(Actions actions, GameMap map, Display display) {
 		for (ActionFactory factory : actionFactories) {

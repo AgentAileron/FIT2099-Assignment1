@@ -12,7 +12,7 @@ import edu.monash.fit2099.engine.*;
  */
 public class RandomWalkBehaviour implements ActionFactory{
 
-    public RandomWalkBehaviour(){}
+    public RandomWalkBehaviour() {}
 
     @Override
 	public Action getAction(Actor actor, GameMap map) {

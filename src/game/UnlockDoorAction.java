@@ -36,7 +36,7 @@ public class UnlockDoorAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return actor + " attempts to unlock the door to the " + direction;
+		return actor + " attempts to unlock the door";
 	}
 
 	@Override
