@@ -2,6 +2,14 @@ package game;
 
 import edu.monash.fit2099.engine.*;
 
+/**
+ * Action for player to give plan to Q (provisions replacement of plans with rocket parts in inventory)
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <sden0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class GivePlanAction extends Action {
 	
 	private Actor subject;

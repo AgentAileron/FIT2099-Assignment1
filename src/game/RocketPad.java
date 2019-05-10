@@ -3,6 +3,9 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
+ * Ground item which holds rocket parts as player collects them 
+ * Once all collected, Rocket may be constructed (replaces instance in location)
+ * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0

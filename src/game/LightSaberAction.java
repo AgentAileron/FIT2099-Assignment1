@@ -4,6 +4,8 @@ import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
 /**
+ * Miniboss special attack - high damage close range attack on player
+ * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0

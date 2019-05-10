@@ -4,6 +4,9 @@ import edu.monash.fit2099.engine.*;
 import java.util.*;
 
 /**
+ * neutral NPC actor Q - interacts with player and exchanges rocket plans for rocket parts
+ * Performs random walk of map when idle
+ * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0

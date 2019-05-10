@@ -4,7 +4,7 @@ import edu.monash.fit2099.engine.*;
 import java.util.Random;
 
 /**
- * Action for miniboss - ranged attack on player when line of sight in vertical / horizontal
+ * Special action for miniboss - ranged attack on player when line of sight in vertical / horizontal
  * is available
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 

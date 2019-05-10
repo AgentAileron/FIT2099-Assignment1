@@ -3,6 +3,8 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
+ * Behaviour handler for Q random walk - 60% chance per turn of movement happening
+ * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <sden0009@student.monash.edu>
  * @version     1.0
