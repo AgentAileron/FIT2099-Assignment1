@@ -59,10 +59,6 @@ public class Application {
 		Actor testQ = new Qnpc(player);
 		gameMap.addActor(testQ, 27, 4);
 		
-		// TEMP - DEBUG ONLY
-		player.addItemToInventory(new WeaponItem("debug cannon", '>', 999, "kills"));
-
-		
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
@@ -71,15 +67,13 @@ public class Application {
 		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
 		gameMap.addItem(plan, 6, 3);
+		gameMap.addItem(new WeaponItem("Wristwatch Lazer", '>', 20, "burns"), 8, 3);
 		
 		Miniboss miniboss = new Miniboss("Dr Maybe", player);
 		miniboss.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
 		gameMap.addActor(miniboss, 26, 12);
 
 		gameMap.addItem(body, 2, 1);
-		
-		//player.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		//player.addItemToInventory(Item.newInventoryItem("Rocket Body", 'h'));
 			
 		world.run();
 

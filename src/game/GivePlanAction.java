@@ -51,6 +51,9 @@ public class GivePlanAction extends Action {
 			actor.removeItemFromInventory(plan);
 			subject.removeItemFromInventory(body);
 			actor.addItemToInventory(body);
+
+			Qnpc Q = (Qnpc) subject;
+			Q.exileReady = true;	// Marked for exile
 			
 			return subject + " traded a Rocket Body to " + actor + " for a Rocket Plan";
 		}else {
