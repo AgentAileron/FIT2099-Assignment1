@@ -31,6 +31,7 @@ public class TalkToQAction extends Action {
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
+
 		Item plan = playerHasItem(actor, 'p');
 		
 		if (plan != null) {

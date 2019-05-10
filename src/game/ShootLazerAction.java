@@ -23,6 +23,10 @@ public class ShootLazerAction extends Action implements ActionFactory {
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
+		if (target == null){	// Safety check, in case target despawns
+			return null;
+    	}
+
 		if (rand.nextBoolean()) {
 			target.hurt(10);
 			

@@ -31,6 +31,6 @@ public class Door extends Ground {
 	
 	@Override
 	public boolean blocksThrownObjects() {
-		return false;
+		return true;
 	}
 }

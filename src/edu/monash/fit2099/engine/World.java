@@ -70,7 +70,9 @@ public class World {
 			GameMap playersMap = actorLocations.locationOf(player).map();
 			playersMap.draw(display);
 			for (Actor actor : actorLocations) {
-				processActorTurn(actor);
+				if (actor != null){		// Safety check in case of despawned actors
+					processActorTurn(actor);
+				}
 			}
 		}
 		display.println(endGameMessage());
@@ -91,6 +93,9 @@ public class World {
 	 * @param actor the Actor whose turn it is.
 	 */
 	protected void processActorTurn(Actor actor) {
+		if (actor == null){	// Safety check, in case target despawns
+			return;
+    	}
 		Location here = actorLocations.locationOf(actor);
 		GameMap map = here.map();
 
