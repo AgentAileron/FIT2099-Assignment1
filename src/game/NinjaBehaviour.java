@@ -21,6 +21,10 @@ public class NinjaBehaviour implements ActionFactory{
 
   @Override
 	public Action getAction(Actor actor, GameMap map) {
+    if (target == null){	// Safety check, in case target despawns
+			return null;
+    }
+    
     Location here = map.locationOf(actor);
 		Location there = map.locationOf(target);
 

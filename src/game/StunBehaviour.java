@@ -21,7 +21,7 @@ public class StunBehaviour implements ActionFactory {
     
     @Override
 	public Action getAction(Actor actor, GameMap map) {
-        if (target == null){	// Safety check, in case target despawns
+        if (subject == null){	// Safety check, in case target despawns
 			return null;
 		}
         Integer range = distance(map.locationOf(attacker), map.locationOf(subject));
