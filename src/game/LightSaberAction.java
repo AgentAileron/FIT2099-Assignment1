@@ -16,6 +16,11 @@ public class LightSaberAction extends Action implements ActionFactory {
 	private Actor target;
 	private Random rand = new Random();
 
+	/**
+	 * Instantiates the lightsaber action (for miniboss)
+	 * 
+	 * @param subject the target actor (EG: Player)
+	 */
 	public LightSaberAction(Actor subject) {
 		this.target = subject;
 	}

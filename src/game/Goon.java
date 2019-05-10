@@ -16,6 +16,11 @@ import java.util.List;
  */
 public class Goon extends Grunt {
 
+	/**
+	 * Instantiate a Goon hostile NPC
+	 * @param name name of the Goon (used for info messages)
+	 * @param player player instance the goon will target
+	 */
 	public Goon(String name, Actor player) {
 		super(name, player, 'G');
 		addBehaviour(new InsultBehavior());

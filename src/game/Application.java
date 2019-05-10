@@ -15,6 +15,10 @@ import edu.monash.fit2099.engine.*;
  */
 public class Application {
 
+	/**
+	 * Main program loop for runtime
+	 * Note that all locations, and their placed NPCs, items, and ground panels are initialised here
+	 */
 	public static void main(String[] args) {
 		World world = new World(new Display());
 

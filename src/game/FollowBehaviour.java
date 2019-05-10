@@ -15,6 +15,10 @@ public class FollowBehaviour implements ActionFactory {
 
 	private Actor target;
 
+	/**
+	 * Create new bahviour handler for following another Actor
+	 * @param subject Actor to follow
+	 */
 	public FollowBehaviour(Actor subject) {
 		this.target = subject;
 	}
