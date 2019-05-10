@@ -75,6 +75,10 @@ public class Application {
 
 		gameMap.addItem(body, 2, 1);
 			
+		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
+		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
+		player.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		
 		world.run();
 
 		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
