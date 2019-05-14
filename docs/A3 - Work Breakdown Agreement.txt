@@ -10,7 +10,7 @@
 	    
 	DIGISIGNS:
     	- Rithesh R Jayaram (14/5/2019) [*]
-		- Sarah D Dennis () [#]
+		- Sarah D Dennis (14/5/2019) [#]
 
     NOTE: B represents both members
 		
