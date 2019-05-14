@@ -26,6 +26,8 @@ public class Application {
 		GameMap lairMap;
 		GameMap moonMap;
 
+		// -- CREATE MAPS -------------------------------------------------------------------- //
+
 		List<String> lairMapString = Arrays.asList(
 			".................................",
 			"...#####D#####....###............",
@@ -66,39 +68,46 @@ public class Application {
 		moonMap = new GameMap(groundFactory, moonMapString);
 		world.addMap(moonMap);
 		
-		Actor player = new Player("Player", '@', 1, 100);
+
+		// -- CREATE ACTORS ------------------------------------------------------------------ //
+
+		Actor player = new Player("Player", '@', 1, 100);	// Player instance
 		world.addPlayer(player, lairMap, 4, 19);
+
+		Miniboss miniboss = new Miniboss("Dr Maybe", player);
+		lairMap.addActor(miniboss, 26, 12);
 		
-		Grunt testGoon = new Goon("Mongo", player);
+		Actor testGoon = new Goon("Mongo", player);
 		lairMap.addActor(testGoon, 0, 0);
 
-		Ninja testNinja = new Ninja("Norbert", player);
+		Actor testNinja = new Ninja("Norbert", player);
 		lairMap.addActor(testNinja, 14, 12);
 
-		Grunt testGrunt = new Grunt("Obediah", player);
+		Actor testGrunt = new Grunt("Obediah", player);
 		lairMap.addActor(testGrunt, 10, 5);
 		
 		Actor testQ = new Qnpc(player);
 		lairMap.addActor(testQ, 27, 4);
 		
+
+		// -- CREATE ITEMS ------------------------------------------------------------------- //
+
+		Item wristwatchLazer = new WeaponItem("Wristwatch Lazer", '>', 20, "burns");
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 
+		miniboss.addItemToInventory(engine);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
-		lairMap.addItem(plan, 6, 3);
-		lairMap.addItem(new WeaponItem("Wristwatch Lazer", '>', 20, "burns"), 8, 3);
-		
-		Miniboss miniboss = new Miniboss("Dr Maybe", player);
-		miniboss.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		lairMap.addActor(miniboss, 26, 12);
-
+		lairMap.addItem(wristwatchLazer, 8, 3);
 		lairMap.addItem(body, 2, 1);
-			
-		world.run();
+		lairMap.addItem(plan, 6, 3);
+		
 
+		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //
+		world.run();
 		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
 	}
 }
