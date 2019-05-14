@@ -26,7 +26,7 @@ public class FinalBoss extends Actor {
 	 * @param player
 	 */
 	public FinalBoss(String name, Actor player) {
-		super(name, '§', 6, 25);
+		super(name, '¥', 6, 25);
 		// TODO -  Final boss behaviours
 	}
 	
@@ -45,5 +45,15 @@ public class FinalBoss extends Actor {
 		}
 
 		return new NPCSkipTurnAction();	// Do nothing if no actions available
+	}
+
+	@Override	// Override to check for exo-suit before applying damage
+	public void hurt(int points){
+		for (int i=0; i < super.inventory.size(); i++){
+			if (super.inventory.get(i).getDisplayChar() == 'x'){
+				return;
+			}
+		}
+		super.hurt(points);
 	}
 }
