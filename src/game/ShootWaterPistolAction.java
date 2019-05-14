@@ -39,9 +39,24 @@ public class ShootWaterPistolAction extends Action {
 	@Override
 	public String execute(Actor actor, GameMap map) {
 		Item waterPistol = getItem(actor, '~');
+		Item exoskeleton = getItem(target, 'x');
 		
 		if (waterPistol != null) {
-			//70% chance to destory exoskeleton
+			if (target.getDisplayChar() == '¥') {
+				if (exoskeleton != null) {
+					//70% chance to destroy their exo-skeleton
+					if (Math.random() < 0.7) {
+						target.removeItemFromInventory(exoskeleton);
+						return actor + " shoots water pistol at " + target + ", it destorys their exo-skeleton!";
+					}
+					else
+						return actor + " shoots water pistol at " + target + ", it misses.";
+				}
+				else
+					return actor + " thinks about shooting water pistol at " + target + ", but remembers that the exo-skeleton has already broken.";
+			}
+			else
+				return actor + " shoots water pistol at " + target + ", it does absolutely nothing...";
 		}
 		else
 			return actor + " does not have a water pistol.";
