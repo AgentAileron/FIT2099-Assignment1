@@ -27,14 +27,6 @@ public class RandomWalkBehaviour implements ActionFactory{
                     return new MoveActorAction(destination, here.getExits().get(exitChosen).getName());  
                 }
             }
-
-            for (Exit exit : here.getExits()){
-                Location destination = exit.getDestination();
-                if (destination.canActorEnter(actor)){
-                    return new MoveActorAction(destination, exit.getName());           
-                }
-            }
-
         }
 		return new NPCSkipTurnAction();
 	}
