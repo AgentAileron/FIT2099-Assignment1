@@ -28,6 +28,6 @@ public class RandomWalkBehaviour implements ActionFactory{
                 }
             }
         }
-		return new NPCSkipTurnAction();
+		return null;
 	}
 }

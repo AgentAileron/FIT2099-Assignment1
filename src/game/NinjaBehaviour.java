@@ -41,7 +41,7 @@ public class NinjaBehaviour implements ActionFactory{
         }
       }
     }
-    return new NPCSkipTurnAction(); // Don't move if out of range or cornered
+    return null;
   }
 
   // Proper distance

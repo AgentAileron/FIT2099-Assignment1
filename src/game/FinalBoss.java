@@ -6,17 +6,19 @@ import java.util.List;
 import edu.monash.fit2099.engine.*;
 
 /**
- * Miniboss hostile NPC ("Doctor Maybe")
+ * Final boss hostile NPC ("Yugo Maxx")
  * Extends actor but uses certain attacks and weapons unique from lesser enemies
+ * Is Russian
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <SDEN0009@student.monash.edu>
  * @version     1.0
  * @since       1.0
  */
-public class Miniboss extends Actor {
+public class FinalBoss extends Actor {
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
+	private Action idle = new SkipTurnAction();
 	
 	/**
 	 * Instantiate a Miniboss - can be done many times,
@@ -24,7 +26,7 @@ public class Miniboss extends Actor {
 	 * @param name
 	 * @param player
 	 */
-	public Miniboss(String name, Actor player) {
+	public FinalBoss(String name, Actor player) {
 		super(name, '§', 6, 25);
 		addBehaviour(new LightSaberAction(player));
 		addBehaviour(new ShootLazerAction(player));
@@ -43,7 +45,8 @@ public class Miniboss extends Actor {
 			if(action != null)
 				return action;
 		}
-
-		return new SkipTurnAction();	// Do nothing if no actions available
+		
+		// If the miniboss can't make any actions, they will do nothing
+		return idle;
 	}
 }

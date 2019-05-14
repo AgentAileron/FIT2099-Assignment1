@@ -58,7 +58,7 @@ public class Player extends Actor {
 				display.readChar();
 				break;
 			}
-			return new SkipTurnAction();
+			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 
 		for (char i = 'a'; i <= 'z'; i++)

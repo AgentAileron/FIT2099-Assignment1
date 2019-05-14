@@ -42,6 +42,6 @@ public class Goon extends Grunt {
 				return action;
 		}
 		
-		return super.playTurn(actions,  map,  display);	// Fallback to calling super
+		return new SkipTurnAction();	// Do nothing if no actions available
 	}
 }
