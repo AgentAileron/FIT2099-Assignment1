@@ -24,6 +24,7 @@ public class Application {
 
 		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket());
 		GameMap gameMap;
+		GameMap moon;
 
 		List<String> map = Arrays.asList(
 			".................................",
@@ -41,8 +42,29 @@ public class Application {
 			".....#..............D...=...#....",
 			"...........#........#.......#....",
 			"....................#########....");
+		
 		gameMap = new GameMap(groundFactory, map);
 		world.addMap(gameMap);
+		
+		List<String> moonMap = Arrays.asList(
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................",
+				".................................");
+		
+		moon = new GameMap(groundFactory, moonMap);
+		world.addMap(moon);
 		
 		Actor player = new Player("Player", '@', 1, 100);
 		world.addPlayer(player, gameMap, 4, 19);
