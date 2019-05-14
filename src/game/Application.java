@@ -99,6 +99,8 @@ public class Application {
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
 		Item exoskeleton = new Item("Exo-skeleton", 'x');
+		Item spacesuit = new Item("Space Suit", '8');
+		
 		Item waterpistol = new Item("Water Pistol", '~');
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
