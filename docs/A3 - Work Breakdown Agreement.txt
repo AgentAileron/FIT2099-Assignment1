@@ -1,0 +1,16 @@
+// Work Breakdown Agreement - Assignment 2 //
+	    > * Teleportation / map switching
+		> # Space suit / oxygen system
+		> * Final boss
+		> * Water Pistol
+		> # Water pools
+		> * Fix NPC movement behaviours
+		> B Internal documentation
+		> B Game termination handling
+	    
+	DIGISIGNS:
+    	- Rithesh R Jayaram (14/5/2019) [*]
+		- Sarah D Dennis () [#]
+
+    NOTE: B represents both members
+		
