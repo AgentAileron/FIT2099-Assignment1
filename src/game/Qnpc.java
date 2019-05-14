@@ -43,6 +43,6 @@ public class Qnpc extends Actor {
 				return action;
 		}
 		
-		return new SkipTurnAction();	// Do nothing if no actions available
+		return new NPCSkipTurnAction();	// Do nothing if no actions available
 	}
 }
