@@ -22,7 +22,7 @@ public class Application {
 	public static void main(String[] args) {
 		World world = new World(new Display());
 
-		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket());
+		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket(), new WaterPool());
 
 		// -- CREATE MAPS -------------------------------------------------------------------- //
 
@@ -98,14 +98,18 @@ public class Application {
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
+		Item exoskeleton = new Item("Exo-skeleton", 'x');
+		Item waterpistol = new Item("Water Pistol", '~');
+		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
 		miniboss.addItemToInventory(engine);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
 		
 		lairMap.addItem(wristwatchLazer, 8, 3);
 		lairMap.addItem(body, 2, 1);
 		lairMap.addItem(plan, 6, 3);
+		lairMap.addItem(waterpistol, 15, 8);
 		
 
 		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //

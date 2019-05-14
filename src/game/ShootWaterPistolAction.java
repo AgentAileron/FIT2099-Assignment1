@@ -9,10 +9,6 @@ import edu.monash.fit2099.engine.Item;
 import edu.monash.fit2099.engine.Location;
 
 public class ShootWaterPistolAction extends Action {
-
-	/*
-	 * INCOMPLETE
-	 */
 	
 	private Actor target;
 	
@@ -41,25 +37,37 @@ public class ShootWaterPistolAction extends Action {
 		Item waterPistol = getItem(actor, '~');
 		Item exoskeleton = getItem(target, 'x');
 		
+		// If the player has a water pistol
 		if (waterPistol != null) {
-			if (target.getDisplayChar() == '¥') {
-				if (exoskeleton != null) {
-					//70% chance to destroy their exo-skeleton
-					if (Math.random() < 0.7) {
-						target.removeItemFromInventory(exoskeleton);
-						return actor + " shoots water pistol at " + target + ", it destorys their exo-skeleton!";
+			if (waterPistol.hasSkill(WaterPistolCharge.FULL)) {
+				
+				// Sets pistol charge to empty
+				waterPistol.removeSkill(WaterPistolCharge.FULL);
+				waterPistol.addSkill(WaterPistolCharge.EMPTY);
+				
+				// If the player is targeting the final boss
+				if (target.getDisplayChar() == '¥') {
+					// If the final boss still has their exo-skeleton
+					if (exoskeleton != null) {
+						// 70% chance to destroy their exo-skeleton
+						if (Math.random() < 0.7) {
+							target.removeItemFromInventory(exoskeleton);
+							return actor + " shoots water pistol at " + target + ", it destroys their exo-skeleton!";
+						}
+						else
+							return actor + " shoots water pistol at " + target + ", but it misses.";
 					}
 					else
-						return actor + " shoots water pistol at " + target + ", it misses.";
+						return actor + " attempts to shoot the water pistol at " + target + ", forgetting that the exo-skeleton has already been broken. Whoops.";
 				}
 				else
-					return actor + " thinks about shooting water pistol at " + target + ", but remembers that the exo-skeleton has already broken.";
+					return actor + " shoots water pistol at " + target + ", sadly it does absolutely nothing...";	
 			}
-			else
-				return actor + " shoots water pistol at " + target + ", it does absolutely nothing...";
+			else 
+				return actor + " attempts to shoot the water pistol, only to realise it has no water...";
 		}
 		else
-			return actor + " does not have a water pistol.";
+			return actor + " does not have a water pistol, whoops...";
 	}
 
 	@Override

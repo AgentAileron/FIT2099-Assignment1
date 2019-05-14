@@ -13,7 +13,6 @@ public class WaterPool extends Ground {
 
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		// Actions to be made available: Refill water pistol
 		return new Actions(new RefillWaterPistolAction());
 	}
 	

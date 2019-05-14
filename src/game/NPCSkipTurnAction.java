@@ -17,4 +17,5 @@ public class NPCSkipTurnAction extends SkipTurnAction {
 	public String menuDescription(Actor actor) {
 		return "";
 	}
+    
 }

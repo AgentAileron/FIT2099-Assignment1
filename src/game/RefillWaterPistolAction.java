@@ -15,11 +15,8 @@ public class RefillWaterPistolAction extends Action {
 	
 	/*
 	 * TO DO
-	 * Modify the allowable actions for player depending on if their pistol needs water or not
-	 * When players pistol is empty, they don't have the shoot water pistol action
+	 * Skills denote whether the item has water or not
 	 */
-
-	private Actions possibleActions = new Actions();
 	
 	public RefillWaterPistolAction() {}
 	
@@ -45,9 +42,16 @@ public class RefillWaterPistolAction extends Action {
 		
 		if (waterPistol != null) {
 			// If water pistol is empty
-			possibleActions.add(new ShootWaterPistolAction());
-			// If water pistol is not empty
-			return "";
+			if (waterPistol.hasSkill(WaterPistolCharge.EMPTY)) {
+				
+				// Changes pistol charge to full
+				waterPistol.removeSkill(WaterPistolCharge.EMPTY);
+				waterPistol.addSkill(WaterPistolCharge.FULL);
+				
+				return actor + " successfully refills their water pistol.";
+			}
+			else
+				return actor + " attempts to fill their water pistol, only to realise that it is already full.";
 		}
 		else
 			return actor + " does not have a water pistol.";
