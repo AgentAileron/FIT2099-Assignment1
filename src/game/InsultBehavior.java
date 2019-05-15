@@ -3,7 +3,8 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
- * Behaviour special to Goon - doesn't affect game environment, passes an insult text to the console
+ * Behaviour special to certain hostile NPCs
+ * Doesn't affect game environment, passes an insult text to the console
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <SDEN0009@student.monash.edu>
@@ -14,15 +15,26 @@ public class InsultBehavior extends Action implements ActionFactory{
 
 	// Contains list of possible insults
 	private static String[] GoonInsults = {
-		"You fool, you will perish at the hands of &&&!",
-		"Doom approaches!",
-		"I smell your fear!",
-		"You can run, but &&& will find you COWARD!!",
-		"You've drawn your final breath, Mr Bond",
-		"YOU WILL PERISH BENEATH THE BOOT OF &&&"
+			"You fool, you will perish at the hands of &&&!",
+			"Doom approaches!",
+			"I smell your fear!",
+			"You can run, but &&& will find you COWARD!!",
+			"You've drawn your final breath, Mr Bond",
+			"YOU WILL PERISH BENEATH THE BOOT OF &&&"
 		};
 
 	private static String[] YugoInsults = {
+			"This is the end, Mr Bond.",
+			"FIGHT ME TOVARISH",
+			"Who send all these babby to fight?",
+			"My name &&& - I will consume the moon, blin.",
+			"My drill shaft is long and hard, and it will penetrate the moon many times, blin",
+			"Babushka, your son &&& will bring the moon mayonez...",
+			"Put up your feests, cyka",
+			"The moon's mayonez is mine, blyat",
+			"Hoho, I heff you now Mr Bond. bit.ly/HoiTher",
+			"You heff done enough Mr Bond. Goodbye.",
+			"I am inevitable"
 		};
 
 	public InsultBehavior(){}
