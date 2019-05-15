@@ -31,7 +31,7 @@ public class ShootWaterPistolAction extends Action {
 		
 		return null;
 	}
-
+	
 	@Override
 	public String execute(Actor actor, GameMap map) {
 		Item waterPistol = getItem(actor, '~');

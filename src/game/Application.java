@@ -111,7 +111,7 @@ public class Application {
 		lairMap.addItem(wristwatchLazer, 8, 3);
 		lairMap.addItem(body, 2, 1);
 		lairMap.addItem(plan, 6, 3);
-		lairMap.addItem(waterpistol, 15, 8);
+		lairMap.addItem(waterpistol, 16, 8);
 		
 
 		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //
