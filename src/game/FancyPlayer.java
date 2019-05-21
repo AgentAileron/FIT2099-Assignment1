@@ -8,9 +8,22 @@ import edu.monash.fit2099.engine.*;
 public class FancyPlayer extends Player {
 	
 	private int stunRemaining = 0;
+	private int oxygenRemaining = 0;
+	private ArrayList<GameMap> maps;
 
 	public FancyPlayer(String name, char displayChar, int priority, int hitPoints) {
 		super(name, displayChar, priority, hitPoints);
+		this.maps = maps;
+	}
+	
+	private Item getItem(char itemDisplayChar, ArrayList<GameMap> maps) {
+		for (int i = 0; i < this.getInventory().size(); i++) {
+			if (this.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
+				return this.getInventory().get(i);
+			}
+		}
+		
+		return null;
 	}
 	
 	@Override
@@ -30,11 +43,6 @@ public class FancyPlayer extends Player {
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 		
-		/*
-		if (getItem('~') != null) {
-			actions.add(new ShootWaterPistolAction())
-		}*/
-
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 
@@ -81,6 +89,14 @@ public class FancyPlayer extends Player {
 		if (!(stunned())){
 			stunRemaining = 2;
 		}
+	}
+	
+	public void increaseOxygen() {
+		oxygenRemaining += 10;
+	}
+	
+	public void movePlayerToNewMap(int mapIndex, Location newLocation) {
+		maps.get(mapIndex).moveActor(this, newLocation);
 	}
 	
 

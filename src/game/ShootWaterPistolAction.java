@@ -67,7 +67,7 @@ public class ShootWaterPistolAction extends Action {
 	@Override
 	public String menuDescription(Actor actor) {
 		if (getItem(actor, '~') != null)
-			return actor + " shoots water pistol";
+			return actor + " shoots water pistol at " + target;
 		else
 			return "";
 	}
