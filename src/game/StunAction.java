@@ -12,7 +12,7 @@ import edu.monash.fit2099.engine.*;
  * @since       1.0
  */
 public class StunAction extends Action {
-	private Player target;
+	private FancyPlayer target;
 
 	public StunAction(Actor target) {
         this.target = (FancyPlayer) target;
