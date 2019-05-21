@@ -15,13 +15,13 @@ public class StunAction extends Action {
 	private Player target;
 
 	public StunAction(Actor target) {
-        this.target = (Player) target;
+        this.target = (FancyPlayer) target;
     }
     
     @Override
 	public String execute(Actor actor, GameMap map) {
         String output = actor + " tries to stun " + target + "...";
-        if (target instanceof Player){
+        if (target instanceof FancyPlayer){
             if (target.stunned()){
                 return output + "but " + target + " was already stunned.";
             }

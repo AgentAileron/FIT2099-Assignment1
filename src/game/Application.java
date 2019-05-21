@@ -73,7 +73,7 @@ public class Application {
 
 		// -- CREATE ACTORS ------------------------------------------------------------------ //
 
-		Actor player = new Player("Player", '@', 1, 100);	// Player instance
+		Actor player = new FancyPlayer("Player", '@', 1, 100);	// Player instance
 		world.addPlayer(player, lairMap, 4, 19);
 
 		Miniboss miniboss = new Miniboss("Dr Maybe", player);
