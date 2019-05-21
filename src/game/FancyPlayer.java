@@ -3,15 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import edu.monash.fit2099.engine.Action;
-import edu.monash.fit2099.engine.Actions;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.AttackAction;
-import edu.monash.fit2099.engine.Display;
-import edu.monash.fit2099.engine.GameMap;
-import edu.monash.fit2099.engine.Item;
-import edu.monash.fit2099.engine.Player;
-import edu.monash.fit2099.engine.SkipTurnAction;
+import edu.monash.fit2099.engine.*;
 
 public class FancyPlayer extends Player {
 	
@@ -21,20 +13,6 @@ public class FancyPlayer extends Player {
 		super(name, displayChar, priority, hitPoints);
 	}
 	
-	private Item getItem(char displayChar) {
-		for (int i = 0; i < this.getInventory().size(); i++) {
-			if (this.getInventory().get(i).getDisplayChar() == '~')
-				return this.getInventory().get(i);
-		}
-		
-		return null;
-	}
-	
-	@Override
-	public Action playTurn(Actions actions, GameMap map, Display display) {
-		return showMenu(actions, display);
-	}
-
 	@Override
 	protected Action showMenu(Actions actions, Display display) {
 		ArrayList<Character> freeChars = new ArrayList<Character>();

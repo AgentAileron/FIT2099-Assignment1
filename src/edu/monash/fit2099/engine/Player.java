@@ -8,8 +8,6 @@ import java.util.HashMap;
  */
 public class Player extends Actor {
 
-	private int stunRemaining = 0;
-
 	/**
 	 * Constructor.
 	 *
@@ -49,18 +47,6 @@ public class Player extends Actor {
 		ArrayList<Character> freeChars = new ArrayList<Character>();
 		HashMap<Character, Action> keyToActionMap = new HashMap<Character, Action>();
 
-		// RJ - addition to method (check for stun)
-		if (stunRemaining > 0){
-			display.println("Player stunned for " + stunRemaining + " turn(s)...\n(Enter any key to continue)");
-			stunRemaining--;
-
-			while(true){
-				display.readChar();
-				break;
-			}
-			return new SkipTurnAction();	// Do nothing if no actions available
-		}
-
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 
@@ -93,19 +79,5 @@ public class Player extends Actor {
 		} while (!keyToActionMap.containsKey(key));
 		
 		return keyToActionMap.get(key);
-	}
-
-	public boolean stunned(){
-		if (stunRemaining <= 0){
-			return false;
-		}else{
-			return true;
-		}
-	}
-
-	public void stun(){
-		if (!(stunned())){
-			stunRemaining = 2;
-		}
 	}
 }
