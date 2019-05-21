@@ -76,7 +76,10 @@ public class Application {
 		Actor player = new FancyPlayer("Player", '@', 1, 100);	// Player instance
 		world.addPlayer(player, lairMap, 4, 19);
 
-		Miniboss miniboss = new Miniboss("Dr Maybe", player);
+		Actor yugo = new FinalBoss("Yugo Maxx", player);
+		moonMap.addActor(yugo, 18, 10);
+
+		Actor miniboss = new Miniboss("Dr Maybe", player);
 		lairMap.addActor(miniboss, 26, 12);
 		
 		Actor testGoon = new Goon("Mongo", player);
@@ -98,6 +101,7 @@ public class Application {
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
+		Item lazerDrill = new WeaponItem("Lazer Drill", '<', 25, "lazer-drills");
 		Item exoskeleton = new Item("Exo-skeleton", 'x');
 		Item spacesuit = new Item("Space Suit", '8');
 		

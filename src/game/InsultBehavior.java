@@ -13,6 +13,8 @@ import edu.monash.fit2099.engine.*;
  */
 public class InsultBehavior extends Action implements ActionFactory{
 
+	private Actor target;
+
 	// Contains list of possible insults
 	private static String[] GoonInsults = {
 			"You fool, you will perish at the hands of &&&!",
@@ -37,16 +39,19 @@ public class InsultBehavior extends Action implements ActionFactory{
 			"I am inevitable"
 		};
 
-	public InsultBehavior(){}
+	public InsultBehavior(Actor subject){
+		this.target = subject;
+	}
 
     @Override
 	public Action getAction(Actor actor, GameMap map) {
 		// 10% chance of insult
 		if (Math.random() < 0.1){
-			return this;
-		}else{
-			return null;
+			if (map.locationOf(target) != null){
+				return this;
+			}
 		}
+		return null;
     }
 
     @Override
