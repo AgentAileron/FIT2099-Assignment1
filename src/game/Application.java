@@ -114,8 +114,10 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
 		// End Test
 		
-		miniboss.addItemToInventory(engine);
 		yugo.addItemToInventory(lazerDrill);
+		yugo.addItemToInventory(exoskeleton);
+
+		miniboss.addItemToInventory(engine);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
 		

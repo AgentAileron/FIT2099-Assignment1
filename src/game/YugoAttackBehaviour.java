@@ -27,15 +27,10 @@ public class YugoAttackBehaviour implements ActionFactory {
 			return null;
         }
         
-        Integer range = distance(map.locationOf(attacker), map.locationOf(target));
+        Integer range = Utilities.distance(map.locationOf(attacker), map.locationOf(target));
         if (range <= 1){
             return new AttackAction(actor, target);
         }// else if (){} // TODO: additional attack types (if time permits)
         return null;
     }
-
-    // Manhattan distance.
-	private int distance(Location a, Location b) {
-		return Math.abs(a.x() - b.x()) + Math.abs(a.y() - b.y());
-	}
 }

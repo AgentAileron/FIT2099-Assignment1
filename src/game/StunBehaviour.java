@@ -24,15 +24,10 @@ public class StunBehaviour implements ActionFactory {
         }
         
         if (map.locationOf(subject) != null){
-            Integer range = distance(map.locationOf(actor), map.locationOf(subject));
+            Integer range = Utilities.distance(map.locationOf(actor), map.locationOf(subject));
             if (range <= 5)
                 return new StunAction(subject);
         }
         return null;
     }
-
-    // Manhattan distance.
-	private int distance(Location a, Location b) {
-		return Math.abs(a.x() - b.x()) + Math.abs(a.y() - b.y());
-	}
 }

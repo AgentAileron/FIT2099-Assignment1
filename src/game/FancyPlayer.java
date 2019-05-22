@@ -18,22 +18,6 @@ public class FancyPlayer extends Player {
 		this.maps = maps;
 	}
 	
-	/**
-	 * If the given actor has a given item, it returns the item
-	 * @param actor - Actor whose inventory will be searched
-	 * @param itemDisplayChar - Character that uniquely identifies the item type
-	 * @return true or false
-	 */
-	private Item getItem(Actor actor, char itemDisplayChar) {
-		for (int i = 0; i < actor.getInventory().size(); i++) {
-			if (actor.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
-				return actor.getInventory().get(i);
-			}
-		}
-		
-		return null;
-	}
-	
 	@Override
 	protected Action showMenu(Actions actions, Display display) {
 		ArrayList<Character> freeChars = new ArrayList<Character>();
@@ -47,9 +31,9 @@ public class FancyPlayer extends Player {
 			}
 			
 			// If player has an oxygen tank in their inventory at any point on the moon it will add more oxygen
-			if (getItem(this, 'o') != null) {
+			if (Utilities.getItem(this, 'o') != null) {
 				increaseOxygen();
-				this.removeItemFromInventory(getItem(this, 'o'));
+				this.removeItemFromInventory(Utilities.getItem(this, 'o'));
 			}
 			
 			oxygenRemaining--;

@@ -19,26 +19,10 @@ public class RefillWaterPistolAction extends Action {
 	 */
 	
 	public RefillWaterPistolAction() {}
-	
-	/**
-	 * If the given actor has a given item, it returns the item
-	 * @param actor - Actor whose inventory will be searched
-	 * @param itemDisplayChar - Character that uniquely identifies the item type
-	 * @return true or false
-	 */
-	private Item getItem(Actor actor, char itemDisplayChar) {
-		for (int i = 0; i < actor.getInventory().size(); i++) {
-			if (actor.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
-				return actor.getInventory().get(i);
-			}
-		}
-		
-		return null;
-	}
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item waterPistol = getItem(actor, '~');
+		Item waterPistol = Utilities.getItem(actor, '~');
 		
 		if (waterPistol != null) {
 			// If water pistol is empty
@@ -60,7 +44,7 @@ public class RefillWaterPistolAction extends Action {
 	@Override
 	public String menuDescription(Actor actor) {
 		// Player is only able to refill the water pistol when they have one
-		if (getItem(actor, '~') != null)
+		if (Utilities.getItem(actor, '~') != null)
 			return actor + " refills water pistol";
 		else
 			return "";
