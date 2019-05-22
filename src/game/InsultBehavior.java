@@ -13,6 +13,8 @@ import edu.monash.fit2099.engine.*;
  */
 public class InsultBehavior extends Action implements ActionFactory{
 
+	private Actor target;
+
 	// Contains list of possible insults
 	private static String[] GoonInsults = {
 			"You fool, you will perish at the hands of &&&!",
@@ -37,30 +39,33 @@ public class InsultBehavior extends Action implements ActionFactory{
 			"I am inevitable"
 		};
 
-	public InsultBehavior(){}
+	public InsultBehavior(Actor subject){
+		this.target = subject;
+	}
 
     @Override
 	public Action getAction(Actor actor, GameMap map) {
 		// 10% chance of insult
 		if (Math.random() < 0.1){
-			return this;
-		}else{
-			return null;
+				return this;
 		}
+		return null;
     }
 
     @Override
 	public String execute(Actor actor, GameMap map) {
-			String[] insultSet = {};
-			if (actor instanceof Goon){
-				insultSet = GoonInsults;
-			}else if (actor instanceof FinalBoss){
-				insultSet = YugoInsults;
-			}
+		String[] insultSet = {};
+		
+		// Determine what NPC insult-set to use, load into `insultSet`
+		if (actor instanceof Goon){
+			insultSet = GoonInsults;
+		}else if (actor instanceof FinalBoss){
+			insultSet = YugoInsults;
+		}
 
-			String output = actor + " shouts: " + randInsult(insultSet);
-			output = output.replace("&&&", actor.toString());
-			return output;
+		String output = actor + " shouts: " + randInsult(insultSet);
+		output = output.replace("&&&", actor.toString());
+		return output;
 	}
 
 	@Override

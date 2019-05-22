@@ -82,7 +82,10 @@ public class Application {
 		//world.addPlayer(player, lairMap, 4, 19);
 		world.addPlayer(player, lairMap, 13, 21);
 
-		Miniboss miniboss = new Miniboss("Dr Maybe", player);
+		Actor yugo = new FinalBoss("Yugo Maxx", player);
+		moonMap.addActor(yugo, 18, 10);
+
+		Actor miniboss = new Miniboss("Dr Maybe", player);
 		lairMap.addActor(miniboss, 26, 12);
 		
 		Actor testGoon = new Goon("Mongo", player);
@@ -104,6 +107,7 @@ public class Application {
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
+		Item lazerDrill = new WeaponItem("Lazer Drill", '<', 25, "lazer-drills");
 		Item exoskeleton = new Item("Exo-skeleton", 'x');
 		Item spacesuit = new Item("Space Suit", '8');
 		
@@ -114,6 +118,7 @@ public class Application {
 		player.addItemToInventory(body);
 		
 		miniboss.addItemToInventory(engine);
+		yugo.addItemToInventory(lazerDrill);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
 		

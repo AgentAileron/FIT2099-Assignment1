@@ -33,7 +33,7 @@ public class FancyPlayer extends Player {
 			}
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
-		
+
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 
@@ -81,7 +81,7 @@ public class FancyPlayer extends Player {
 			stunRemaining = 2;
 		}
 	}
-	
+
 	public void increaseOxygen() {
 		oxygenRemaining += 10;
 	}

@@ -23,7 +23,7 @@ public class Goon extends Grunt {
 	 */
 	public Goon(String name, Actor player) {
 		super(name, player, 'G');
-		addBehaviour(new InsultBehavior());
+		addBehaviour(new InsultBehavior(player));
 		Item tazer = new WeaponItem("tazer", '^', 10, "zaps");
 		addItemToInventory(tazer);
 	}

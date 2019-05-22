@@ -27,9 +27,9 @@ public class FinalBoss extends Actor {
 	 */
 	public FinalBoss(String name, Actor player) {
 		super(name, '¥', 6, 25);
-		addBehaviour(new InsultBehavior());
-		// TODO -  More final boss behaviours (attacking etc.)
-		addBehaviour(new RandomWalkBehaviour());
+		addBehaviour(new InsultBehavior(player));				// 10% chance
+		addBehaviour(new YugoAttackBehaviour(this, player));	// Always tries melee attack
+		addBehaviour(new RandomWalkBehaviour());				// 60% chance (final behaviour, else nothing)
 	}
 	
 	private void addBehaviour(ActionFactory behaviour) {
