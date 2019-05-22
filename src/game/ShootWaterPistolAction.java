@@ -10,26 +10,10 @@ public class ShootWaterPistolAction extends Action {
 		this.target = target;
 	}
 	
-	/**
-	 * If the given actor has a given item, it returns the item
-	 * @param actor - Actor whose inventory will be searched
-	 * @param itemDisplayChar - Character that uniquely identifies the item type
-	 * @return true or false
-	 */
-	private Item getItem(Actor actor, char itemDisplayChar) {
-		for (int i = 0; i < actor.getInventory().size(); i++) {
-			if (actor.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
-				return actor.getInventory().get(i);
-			}
-		}
-		
-		return null;
-	}
-	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item waterPistol = getItem(actor, '~');
-		Item exoskeleton = getItem(target, 'x');
+		Item waterPistol = Utilities.getItem(actor, '~');
+		Item exoskeleton = Utilities.getItem(target, 'x');
 		
 		// If the player has a water pistol
 		if (waterPistol != null) {
@@ -66,7 +50,7 @@ public class ShootWaterPistolAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		if (getItem(actor, '~') != null)
+		if (Utilities.getItem(actor, '~') != null)
 			return actor + " shoots water pistol at " + target;
 		else
 			return "";
