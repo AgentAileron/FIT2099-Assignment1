@@ -83,7 +83,7 @@ public class Application {
 		world.addPlayer(player, lairMap, 13, 21);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
-		moonMap.addActor(yugo, 18, 10);
+		moonMap.addActor(yugo, 0, 0);
 
 		Actor miniboss = new Miniboss("Dr Maybe", player);
 		lairMap.addActor(miniboss, 26, 12);
