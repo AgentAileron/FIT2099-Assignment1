@@ -117,8 +117,10 @@ public class Application {
 		player.addItemToInventory(engine);
 		player.addItemToInventory(body);
 		
-		miniboss.addItemToInventory(engine);
 		yugo.addItemToInventory(lazerDrill);
+		yugo.addItemToInventory(exoskeleton);
+
+		miniboss.addItemToInventory(engine);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
 		
