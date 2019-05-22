@@ -109,6 +109,7 @@ public class Application {
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
 		miniboss.addItemToInventory(engine);
+		yugo.addItemToInventory(lazerDrill);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
 		

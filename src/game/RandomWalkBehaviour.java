@@ -1,6 +1,7 @@
 package game;
 
 import edu.monash.fit2099.engine.*;
+import java.util.ArrayList;
 
 /**
  * Behaviour handler for NPC random walk - 60% chance per turn of movement happening
@@ -20,13 +21,23 @@ public class RandomWalkBehaviour implements ActionFactory{
         
         if (Math.random() < 0.6){   // 60% chance that NPC will move 
 
+            ArrayList<Exit> validDirections = new ArrayList<Exit>();
+
+            // Get valid exits
             for (int i=0; i < 4; i++){
-                int exitChosen = (int) (Math.random()*3);
-                Location destination = here.getExits().get(exitChosen).getDestination();
-                if (destination.canActorEnter(actor)){
-                    return new MoveActorAction(destination, here.getExits().get(exitChosen).getName());  
+                Exit direction = here.getExits().get(i);
+                if (direction.getDestination().canActorEnter(actor)){
+                   validDirections.add(direction);
                 }
             }
+
+            // Return a random exit of the valid exits available (if any)
+            if (validDirections.size() >= 0){
+                int randint = (int) (Math.random() * (validDirections.size()));
+                Exit chosenExit = validDirections.get(randint);
+                return new MoveActorAction(chosenExit.getDestination(), chosenExit.getName());
+            }
+
         }
 		return null;
 	}

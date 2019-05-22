@@ -14,7 +14,7 @@ import edu.monash.fit2099.engine.*;
 public class HostileAttackBehaviour implements ActionFactory {
 
     private Actor attacker;
-    private Actor subject;
+    private Actor target;
     
     /**
      * Instantiate a new hostile attack behaviour for an Actor
@@ -23,18 +23,18 @@ public class HostileAttackBehaviour implements ActionFactory {
      */
     public HostileAttackBehaviour(Actor actor, Actor subject) {
         this.attacker = actor;
-        this.subject = subject;
+        this.target = subject;
     }
     
     @Override
 	public Action getAction(Actor actor, GameMap map) {
-        if (subject == null){	// Safety check, in case target despawns
+        if (target == null){	// Safety check, in case target despawns
 			return null;
         }
         
-        Integer range = distance(map.locationOf(attacker), map.locationOf(subject));
+        Integer range = distance(map.locationOf(attacker), map.locationOf(target));
         if (range <= 1){
-            return new AttackAction(actor, subject);
+            return new AttackAction(actor, target);
         }else{
             return null;
         }
