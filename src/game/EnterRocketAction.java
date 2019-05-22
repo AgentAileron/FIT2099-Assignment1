@@ -20,8 +20,10 @@ public class EnterRocketAction extends Action {
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		map.removeActor(actor);
-		return actor + " has entered the rocket and has made their escape into outer space... Congratulations, you win!";
+		if (actor instanceof FancyPlayer){
+			((FancyPlayer) actor).movePlayerToMap("Moon");
+		}
+		return actor + " has entered the rocket and gone to the moon.";
 	}
 
 	@Override
