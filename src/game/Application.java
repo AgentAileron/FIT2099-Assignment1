@@ -1,5 +1,6 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,14 +51,14 @@ public class Application {
 		GameMap moonMap;
 		List<String> moonMapString = Arrays.asList(
 			"......................................",
+			".................................=....",
+			"......................................",
+			"......................................",
+			"..................&...................",
 			"......................................",
 			"......................................",
 			"......................................",
-			"......................................",
-			"......................................",
-			"......................................",
-			"......................................",
-			"......................................",
+			"........&.............................",
 			"......................................",
 			"......................................",
 			"......................................",
@@ -70,11 +71,16 @@ public class Application {
 		moonMap = new GameMap(groundFactory, moonMapString);
 		world.addMap(moonMap);
 		
+		List<GameMap> maps = new ArrayList<GameMap>();
+		maps.add(lairMap);
+		maps.add(moonMap);
+		
 
 		// -- CREATE ACTORS ------------------------------------------------------------------ //
 
-		Actor player = new FancyPlayer("Player", '@', 1, 100);	// Player instance
-		world.addPlayer(player, lairMap, 4, 19);
+		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
+		//world.addPlayer(player, lairMap, 4, 19);
+		world.addPlayer(player, lairMap, 13, 21);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 18, 10);
@@ -108,6 +114,9 @@ public class Application {
 		Item waterpistol = new Item("Water Pistol", '~');
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
+		player.addItemToInventory(engine);
+		player.addItemToInventory(body);
+		
 		miniboss.addItemToInventory(engine);
 		yugo.addItemToInventory(lazerDrill);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
