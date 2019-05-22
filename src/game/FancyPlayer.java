@@ -2,15 +2,18 @@ package game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import edu.monash.fit2099.engine.*;
 
 public class FancyPlayer extends Player {
 	
 	private int stunRemaining = 0;
+	protected List<GameMap> maps;
 
-	public FancyPlayer(String name, char displayChar, int priority, int hitPoints) {
+	public FancyPlayer(String name, char displayChar, int priority, int hitPoints, List<GameMap> maps) {
 		super(name, displayChar, priority, hitPoints);
+		this.maps = maps;
 	}
 	
 	@Override
@@ -81,6 +84,13 @@ public class FancyPlayer extends Player {
 		if (!(stunned())){
 			stunRemaining = 2;
 		}
+	}
+	
+	public void movePlayerToMap(String mapName) {
+		if (mapName == "Moon") {
+			maps.get(1).moveActor(this, maps.get(1).at(7, 2));
+		}
+			
 	}
 	
 
