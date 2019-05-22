@@ -47,25 +47,25 @@ public class InsultBehavior extends Action implements ActionFactory{
 	public Action getAction(Actor actor, GameMap map) {
 		// 10% chance of insult
 		if (Math.random() < 0.1){
-			if (map.locationOf(target) != null){
 				return this;
-			}
 		}
 		return null;
     }
 
     @Override
 	public String execute(Actor actor, GameMap map) {
-			String[] insultSet = {};
-			if (actor instanceof Goon){
-				insultSet = GoonInsults;
-			}else if (actor instanceof FinalBoss){
-				insultSet = YugoInsults;
-			}
+		String[] insultSet = {};
+		
+		// Determine what NPC insult-set to use, load into `insultSet`
+		if (actor instanceof Goon){
+			insultSet = GoonInsults;
+		}else if (actor instanceof FinalBoss){
+			insultSet = YugoInsults;
+		}
 
-			String output = actor + " shouts: " + randInsult(insultSet);
-			output = output.replace("&&&", actor.toString());
-			return output;
+		String output = actor + " shouts: " + randInsult(insultSet);
+		output = output.replace("&&&", actor.toString());
+		return output;
 	}
 
 	@Override
