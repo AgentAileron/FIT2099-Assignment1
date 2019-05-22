@@ -34,11 +34,6 @@ public class FancyPlayer extends Player {
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 		
-		/*
-		if (getItem('~') != null) {
-			actions.add(new ShootWaterPistolAction())
-		}*/
-
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 

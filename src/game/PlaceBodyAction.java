@@ -67,7 +67,10 @@ public class PlaceBodyAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return actor + " attempts to place rocket body onto rocket pad";
+		if (playerHasItem(actor, 'h') != null)
+			return actor + " attempts to place rocket body onto rocket pad";
+		else
+			return "";
 	}
 
 	@Override
