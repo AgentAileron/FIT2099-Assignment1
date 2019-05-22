@@ -50,7 +50,7 @@ public class FancyPlayer extends Player {
 			
 			oxygenRemaining--;
 			
-			if (oxygenRemaining == 0) {
+			if (oxygenRemaining <= 0) {
 				display.println("Player has run out of oxygen! Their safety system ejects them back to earth.");
 				this.movePlayerToMap("Lair");
 			}
@@ -127,11 +127,11 @@ public class FancyPlayer extends Player {
 	public void movePlayerToMap(String mapName) {
 		if (mapName == "Moon") {
 			onTheMoon = true;
-			maps.get(1).moveActor(this, maps.get(1).at(5, 0));
+			maps.get(1).moveActor(this, maps.get(1).at(3, 1));
 		}
 		else if (mapName == "Lair") {
 			onTheMoon = false;
-			maps.get(0).moveActor(this, maps.get(0).at(12, 22));
+			maps.get(0).moveActor(this, maps.get(0).at(13, 21));
 		}
 	}
 }
