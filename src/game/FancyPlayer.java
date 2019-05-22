@@ -9,6 +9,7 @@ import edu.monash.fit2099.engine.*;
 public class FancyPlayer extends Player {
 	
 	private int stunRemaining = 0;
+	private int oxygenRemaining = 0;
 	protected List<GameMap> maps;
 
 	public FancyPlayer(String name, char displayChar, int priority, int hitPoints, List<GameMap> maps) {
@@ -75,7 +76,7 @@ public class FancyPlayer extends Player {
 	public boolean stunned(){
 		if (stunRemaining <= 0){
 			return false;
-		}else{
+		} else {
 			return true;
 		}
 	}
@@ -86,12 +87,16 @@ public class FancyPlayer extends Player {
 		}
 	}
 	
+	public void increaseOxygen() {
+		oxygenRemaining += 10;
+	}
+	
 	public void movePlayerToMap(String mapName) {
 		if (mapName == "Moon") {
 			maps.get(1).moveActor(this, maps.get(1).at(7, 2));
 		}
-			
+		else if (mapName == "Lair") {
+			maps.get(0).moveActor(this, maps.get(0).at(12, 22));
+		}
 	}
-	
-
 }
