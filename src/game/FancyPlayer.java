@@ -10,6 +10,7 @@ public class FancyPlayer extends Player {
 	
 	private int stunRemaining = 0;
 	private int oxygenRemaining = 0;
+	private boolean onTheMoon = false;
 	protected List<GameMap> maps;
 
 	public FancyPlayer(String name, char displayChar, int priority, int hitPoints, List<GameMap> maps) {
@@ -17,13 +18,49 @@ public class FancyPlayer extends Player {
 		this.maps = maps;
 	}
 	
+	/**
+	 * If the given actor has a given item, it returns the item
+	 * @param actor - Actor whose inventory will be searched
+	 * @param itemDisplayChar - Character that uniquely identifies the item type
+	 * @return true or false
+	 */
+	private Item getItem(Actor actor, char itemDisplayChar) {
+		for (int i = 0; i < actor.getInventory().size(); i++) {
+			if (actor.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
+				return actor.getInventory().get(i);
+			}
+		}
+		
+		return null;
+	}
+	
 	@Override
 	protected Action showMenu(Actions actions, Display display) {
 		ArrayList<Character> freeChars = new ArrayList<Character>();
 		HashMap<Character, Action> keyToActionMap = new HashMap<Character, Action>();
+		
+		// If player is on the moon, check how much oxygen they have
+		if (onTheMoon) {
+			
+			// If player has an oxygen tank in their inventory at any point on the moon it will add more oxygen
+			if (getItem(this, 'o') != null) {
+				increaseOxygen();
+				this.removeItemFromInventory(getItem(this, 'o'));
+			}
+			
+			oxygenRemaining--;
+			
+			if (oxygenRemaining == 0) {
+				display.println("Player has run out of oxygen! Their safety system ejects them back to earth.");
+				this.movePlayerToMap("Lair");
+			}
+			else {
+				display.println("Player has " + oxygenRemaining + " steps of oxygen left.");
+			}
+		}
 
-		// RJ - addition to method (check for stun)
-		if (stunRemaining > 0){
+		// If player is stunned
+		if (stunRemaining > 0) {
 			display.println("Player stunned for " + stunRemaining + " turn(s)...\n(Enter any key to continue)");
 			stunRemaining--;
 
@@ -31,6 +68,7 @@ public class FancyPlayer extends Player {
 				display.readChar();
 				break;
 			}
+			
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 
@@ -88,9 +126,11 @@ public class FancyPlayer extends Player {
 	
 	public void movePlayerToMap(String mapName) {
 		if (mapName == "Moon") {
-			maps.get(1).moveActor(this, maps.get(1).at(7, 2));
+			onTheMoon = true;
+			maps.get(1).moveActor(this, maps.get(1).at(5, 0));
 		}
 		else if (mapName == "Lair") {
+			onTheMoon = false;
 			maps.get(0).moveActor(this, maps.get(0).at(12, 22));
 		}
 	}
