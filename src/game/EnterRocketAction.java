@@ -18,31 +18,15 @@ public class EnterRocketAction extends Action {
 		this.rocketLocation = rocketLocation;
 	}
 	
-	/**
-	 * If the given actor has a given item, it returns the item
-	 * @param actor - Actor whose inventory will be searched
-	 * @param itemDisplayChar - Character that uniquely identifies the item type
-	 * @return true or false
-	 */
-	private Item getItem(Actor actor, char itemDisplayChar) {
-		for (int i = 0; i < actor.getInventory().size(); i++) {
-			if (actor.getInventory().get(i).getDisplayChar() == itemDisplayChar) {
-				return actor.getInventory().get(i);
-			}
-		}
-		
-		return null;
-	}
-
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		if (getItem(actor, 'o') != null && getItem(actor, '8') != null) {
+		if (Utilities.getItem(actor, 'o') != null && Utilities.getItem(actor, '8') != null) {
 			if (actor instanceof FancyPlayer){
 				((FancyPlayer) actor).movePlayerToMap("Moon");
 			}
 			return actor + " has entered the rocket and gone to the moon.";
 		}
-		else if (getItem(actor, 'o') == null)
+		else if (Utilities.getItem(actor, 'o') == null)
 			return actor + " tries to enter the rocket, but realises they don't have an oxygen tank.";
 		
 		return actor + " tries to enter the rocket, but realises they don't have a space suit.";
