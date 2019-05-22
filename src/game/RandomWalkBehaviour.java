@@ -31,12 +31,10 @@ public class RandomWalkBehaviour implements ActionFactory{
                    validDirections.add(possibleExits.get(i));
                 }
             }
-            System.out.println("exitState: " + validDirections.size());
 
             // Return a random exit of the valid exits available (if any)
             if (validDirections.size() >= 0){
                 int randint = (int) Math.floor((Math.random() * (validDirections.size() )));
-                System.out.println("randint: " + randint);
                 if (randint < validDirections.size()){
                     Exit chosenExit = validDirections.get(randint);
                     return new MoveActorAction(chosenExit.getDestination(), chosenExit.getName());
