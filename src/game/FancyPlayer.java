@@ -42,6 +42,10 @@ public class FancyPlayer extends Player {
 		// If player is on the moon, check how much oxygen they have
 		if (onTheMoon) {
 			
+			if (getItem(this, '8') != null) {
+				getItem(this, '8').getAllowableActions().clear();
+			}
+			
 			// If player has an oxygen tank in their inventory at any point on the moon it will add more oxygen
 			if (getItem(this, 'o') != null) {
 				increaseOxygen();
@@ -122,6 +126,10 @@ public class FancyPlayer extends Player {
 
 	public void increaseOxygen() {
 		oxygenRemaining += 10;
+	}
+	
+	public boolean isPlayerOnMoon() {
+		return this.onTheMoon;
 	}
 	
 	public void movePlayerToMap(String mapName) {

@@ -50,7 +50,7 @@ public class Application {
 		
 		GameMap moonMap;
 		List<String> moonMapString = Arrays.asList(
-			".......=..",
+			".......R..",
 			"..........",
 			".&........",
 			".......&..",
@@ -107,8 +107,12 @@ public class Application {
 		Item waterpistol = new Item("Water Pistol", '~');
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
-		player.addItemToInventory(engine);
-		player.addItemToInventory(body);
+		// Test
+		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
+		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
+		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		// End Test
 		
 		miniboss.addItemToInventory(engine);
 		yugo.addItemToInventory(lazerDrill);
