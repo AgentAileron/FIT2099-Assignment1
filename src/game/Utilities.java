@@ -4,8 +4,6 @@ import edu.monash.fit2099.engine.*;
 
 class Utilities {
 
-
-    
     /**
 	 * If the given actor has a given item, it returns the item
 	 * @param actor - Actor whose inventory will be searched
@@ -21,4 +19,9 @@ class Utilities {
 		
 		return null;
     }
+
+    // Manhattan distance.
+	protected static int distance(Location a, Location b) {
+		return Math.abs(a.x() - b.x()) + Math.abs(a.y() - b.y());
+	}
 }
