@@ -34,7 +34,13 @@ public class YugoAttackBehaviour implements ActionFactory {
         
         Integer range = Gutils.distance(map.locationOf(attacker), map.locationOf(target));
         if (range <= 1){
-            return new AttackAction(actor, target);
+            // Temp check for player if on moon - should'nt be necessary, but included for spurious bug
+            if (target instanceof FancyPlayer){
+                FancyPlayer tempTarget = (FancyPlayer) target;
+                if (tempTarget.isPlayerOnMoon()){
+                    return new AttackAction(actor, target);
+                }
+            }
         }// else if (){} // TODO: create additional attack types (if time permits)
         return null;
     }
