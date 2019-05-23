@@ -35,7 +35,7 @@ public class RefillWaterPistolAction extends Action {
 				return actor + " attempts to fill their water pistol, only to realise that it is already full.";
 		}
 		else
-			return actor + " does not have a water pistol.";
+			return "Huh? " + actor + " does not have a water pistol.";
 	}
 
 	@Override

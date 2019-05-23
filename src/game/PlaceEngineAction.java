@@ -67,10 +67,7 @@ public class PlaceEngineAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		if (playerHasItem(actor, 'e') != null)
-			return actor + " attempts to place rocket engine onto rocket pad";
-		else
-			return "";
+		return actor + " attempts to place rocket engine onto rocket pad";
 	}
 
 	@Override
