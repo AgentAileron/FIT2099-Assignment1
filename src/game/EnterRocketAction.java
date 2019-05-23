@@ -23,13 +23,13 @@ public class EnterRocketAction extends Action {
 		if (actor instanceof FancyPlayer) {
 			if (!((FancyPlayer) actor).isPlayerOnMoon()) {
 				// If player is not on the moon
-				if (Utilities.getItem(actor, 'o') != null && Utilities.getItem(actor, '8') != null) {
+				if (Gutils.getItem(actor, 'o') != null && Gutils.getItem(actor, '8') != null) {
 					((FancyPlayer) actor).movePlayerToMap("Moon");
 					return actor + " has entered the rocket and gone to the moon.";
 				}
-				else if (Utilities.getItem(actor, 'o') == null && Utilities.getItem(actor, '8') == null)
+				else if (Gutils.getItem(actor, 'o') == null && Gutils.getItem(actor, '8') == null)
 					return actor + " tries to enter the rocket, but realises they neither have an oxygen tank nor a space suit.";
-				else if (Utilities.getItem(actor, 'o') == null)
+				else if (Gutils.getItem(actor, 'o') == null)
 					return actor + " tries to enter the rocket, but realises they don't have an oxygen tank.";
 			
 				return actor + " tries to enter the rocket, but realises they don't have a space suit.";

@@ -26,8 +26,8 @@ public class FancyPlayer extends Player {
 		// If player is on the moon, check how much oxygen they have
 		if (onTheMoon) {
 			
-			if (getItem(this, '8') != null) {
-				getItem(this, '8').getAllowableActions().clear();
+			if (Gutils.getItem(this, '8') != null) {
+				Gutils.getItem(this, '8').getAllowableActions().clear();
 			}
 			
 			// If player has an oxygen tank in their inventory at any point on the moon it will add more oxygen
