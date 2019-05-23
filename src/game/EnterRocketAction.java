@@ -20,13 +20,13 @@ public class EnterRocketAction extends Action {
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		if (Utilities.getItem(actor, 'o') != null && Utilities.getItem(actor, '8') != null) {
+		if (Gutils.getItem(actor, 'o') != null && Gutils.getItem(actor, '8') != null) {
 			if (actor instanceof FancyPlayer){
 				((FancyPlayer) actor).movePlayerToMap("Moon");
 			}
 			return actor + " has entered the rocket and gone to the moon.";
 		}
-		else if (Utilities.getItem(actor, 'o') == null)
+		else if (Gutils.getItem(actor, 'o') == null)
 			return actor + " tries to enter the rocket, but realises they don't have an oxygen tank.";
 		
 		return actor + " tries to enter the rocket, but realises they don't have a space suit.";

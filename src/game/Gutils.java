@@ -2,7 +2,7 @@ package game;
 
 import edu.monash.fit2099.engine.*;
 
-class Utilities {
+class Gutils {
 
     /**
 	 * If the given actor has a given item, it returns the item

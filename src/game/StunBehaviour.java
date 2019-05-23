@@ -24,7 +24,7 @@ public class StunBehaviour implements ActionFactory {
         }
         
         if (map.locationOf(subject) != null){
-            Integer range = Utilities.distance(map.locationOf(actor), map.locationOf(subject));
+            Integer range = Gutils.distance(map.locationOf(actor), map.locationOf(subject));
             if (range <= 5)
                 return new StunAction(subject);
         }
