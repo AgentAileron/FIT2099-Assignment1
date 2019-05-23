@@ -62,6 +62,27 @@ public class FancyPlayer extends Player {
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 
+		if (onTheMoon) {
+			if (Gutils.getItem(this, '~') != null) {
+				Gutils.getItem(this, '~').getAllowableActions().clear();
+				Location here = maps.get(1).locationOf(this);
+	
+				Range xs, ys;
+			
+				xs = new Range(here.x(), Math.abs(here.x()) + 1);
+				ys = new Range(here.y(), Math.abs(here.y()) + 1);
+	
+				for (int x : xs) {
+					for (int y : ys) {
+						if (maps.get(1).at(x, y).getGround().blocksThrownObjects())
+							Gutils.getItem(this, '~').getAllowableActions().clear();
+						else if (maps.get(1).isAnActorAt(maps.get(1).at(x, y)) == true)
+							Gutils.getItem(this, '~').getAllowableActions().add(new ShootWaterPistolAction(maps.get(1).actorAt(maps.get(1).at(x, y))));
+					}
+				}
+			}
+		}
+		
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 
