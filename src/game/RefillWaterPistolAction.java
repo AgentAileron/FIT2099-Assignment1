@@ -13,11 +13,6 @@ import edu.monash.fit2099.engine.Location;
 
 public class RefillWaterPistolAction extends Action {
 	
-	/*
-	 * TO DO
-	 * Skills denote whether the item has water or not
-	 */
-	
 	public RefillWaterPistolAction() {}
 
 	@Override
@@ -38,16 +33,12 @@ public class RefillWaterPistolAction extends Action {
 				return actor + " attempts to fill their water pistol, only to realise that it is already full.";
 		}
 		else
-			return actor + " does not have a water pistol.";
+			return "Huh? " + actor + " does not have a water pistol.";
 	}
 
 	@Override
 	public String menuDescription(Actor actor) {
-		// Player is only able to refill the water pistol when they have one
-		if (Utilities.getItem(actor, '~') != null)
-			return actor + " refills water pistol";
-		else
-			return "";
+		return actor + " refills water pistol.";
 	}
 
 	@Override

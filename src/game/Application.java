@@ -31,7 +31,7 @@ public class Application {
 		List<String> lairMapString = Arrays.asList(
 			".................................",
 			"...#####D#####....###............",
-			"...#.........#.....#.............",
+			"=..#.........#.....#.............",
 			"...#.........#...........#.#.#...",
 			"...#......###...........#.....#..",
 			"...##D#####..............#...#...",
@@ -41,7 +41,7 @@ public class Application {
 			"..#......#.....#.................",
 			".........###.........#######.....",
 			"....................#.......#....",
-			".....#..............D...=...#....",
+			".....#..............D.......#....",
 			".╬.........#........#.......#....",
 			"....................#########....");
 		
@@ -73,7 +73,7 @@ public class Application {
 
 		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
 		//world.addPlayer(player, lairMap, 4, 19);
-		world.addPlayer(player, lairMap, 13, 21);
+		world.addPlayer(player, lairMap, 3, 0);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
@@ -112,6 +112,9 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		Item w = Item.newInventoryItem("Water Pistol", '~');
+		w.addSkill(WaterPistolCharge.EMPTY);
+		player.addItemToInventory(w);
 		// End Test
 		
 		yugo.addItemToInventory(lazerDrill);
@@ -119,11 +122,11 @@ public class Application {
 
 		miniboss.addItemToInventory(engine);
 		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		testGrunt.addItemToInventory(Item.newInventoryItem("Water Pistol", '$'));
+		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
-		lairMap.addItem(wristwatchLazer, 8, 3);
+		lairMap.addItem(wristwatchLazer, 8, 2);
 		lairMap.addItem(body, 2, 1);
-		lairMap.addItem(plan, 6, 3);
+		lairMap.addItem(plan, 7, 4);
 		lairMap.addItem(waterpistol, 16, 8);
 		
 
