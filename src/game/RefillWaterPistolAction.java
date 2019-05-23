@@ -17,7 +17,7 @@ public class RefillWaterPistolAction extends Action {
 
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item waterPistol = Utilities.getItem(actor, '~');
+		Item waterPistol = Gutils.getItem(actor, '~');
 		
 		if (waterPistol != null) {
 			// If water pistol is empty
@@ -38,7 +38,11 @@ public class RefillWaterPistolAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return actor + " refills water pistol.";
+		// Player is only able to refill the water pistol when they have one
+		if (Gutils.getItem(actor, '~') != null)
+			return actor + " refills water pistol";
+		else
+			return "";
 	}
 
 	@Override

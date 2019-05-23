@@ -25,16 +25,14 @@ public class FancyPlayer extends Player {
 		
 		// If player is on the moon, check how much oxygen they have
 		if (onTheMoon) {
-			
-			// Removes players ability to drop their space suit on the moon
-			if (Utilities.getItem(this, '8') != null) {
-				Utilities.getItem(this, '8').getAllowableActions().clear();
+			if (Gutils.getItem(this, '8') != null) {
+				Gutils.getItem(this, '8').getAllowableActions().clear();
 			}
 			
 			// If player has an oxygen tank in their inventory at any point on the moon it will add more oxygen
-			if (Utilities.getItem(this, 'o') != null) {
+			if (Gutils.getItem(this, 'o') != null) {
 				increaseOxygen();
-				this.removeItemFromInventory(Utilities.getItem(this, 'o'));
+				this.removeItemFromInventory(Gutils.getItem(this, 'o'));
 			}
 			
 			oxygenRemaining--;

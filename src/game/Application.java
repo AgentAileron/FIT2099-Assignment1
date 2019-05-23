@@ -73,7 +73,7 @@ public class Application {
 
 		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
 		//world.addPlayer(player, lairMap, 4, 19);
-		world.addPlayer(player, lairMap, 3, 0);
+		world.addPlayer(player, lairMap, 0, 0);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
@@ -82,7 +82,7 @@ public class Application {
 		lairMap.addActor(miniboss, 26, 12);
 		
 		Actor testGoon = new Goon("Mongo", player);
-		lairMap.addActor(testGoon, 0, 0);
+		lairMap.addActor(testGoon, 1, 1);
 
 		Actor testNinja = new Ninja("Norbert", player);
 		lairMap.addActor(testNinja, 14, 12);
