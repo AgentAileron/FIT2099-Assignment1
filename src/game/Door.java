@@ -13,7 +13,8 @@ import edu.monash.fit2099.engine.*;
 public class Door extends Ground {
 
 	/**
-	 * Instantiate a door panel
+	 * Instantiates a door ground type
+	 * Door begins locked on instantiation
 	 */
 	public Door() {
 		super('D');
@@ -21,7 +22,7 @@ public class Door extends Ground {
 
 	@Override
 	public Actions allowableActions(Actor actor, Location location, String direction){
-		return new Actions(new UnlockDoorAction(direction, location));
+		return new Actions(new UnlockDoorAction(location));
 	}
 	
 	@Override

@@ -14,6 +14,10 @@ public class DispenseOxygenAction extends Action {
 	
 	private Location dispenserLocation;
 	
+	/**
+	 * Instantiates an oxygen dispenser
+	 * @param dispenserLocation location of dispenser to interact with
+	 */
 	public DispenseOxygenAction(Location dispenserLocation) {
 		this.dispenserLocation = dispenserLocation;
 	}

@@ -1,8 +1,5 @@
 package game;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.monash.fit2099.engine.*;
 
 /**
@@ -15,11 +12,9 @@ import edu.monash.fit2099.engine.*;
  */
 public class RefillWaterPistolAction extends Action {
 	
-	/*
-	 * TO DO
-	 * Skills denote whether the item has water or not
+	/**
+	 * Instantiate an instance of action to (attempt to) refill water pistol
 	 */
-	
 	public RefillWaterPistolAction() {}
 
 	@Override

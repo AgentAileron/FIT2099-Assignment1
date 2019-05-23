@@ -17,6 +17,11 @@ public class ShootWaterPistolAction extends Action {
 	
 	private Actor target;
 	
+	/**
+	 * Instantiates action of player shooting water-pistol
+	 * NB: Target is specified during init, water pistol only designed to target one entity
+	 * @param target
+	 */
 	public ShootWaterPistolAction(Actor target) {
 		this.target = target;
 	}

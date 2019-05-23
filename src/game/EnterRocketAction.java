@@ -11,12 +11,11 @@ import edu.monash.fit2099.engine.*;
  * @since       1.0
  */
 public class EnterRocketAction extends Action {
-	
-	private Location rocketLocation;
 
-	public EnterRocketAction(Location rocketLocation) {
-		this.rocketLocation = rocketLocation;
-	}
+	/**
+	 * Creates an instance of enterRocketAction (for use by player)
+	 */
+	public EnterRocketAction() {}
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {

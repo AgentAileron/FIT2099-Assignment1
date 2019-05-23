@@ -16,6 +16,11 @@ public class YugoAttackBehaviour implements ActionFactory {
     private Actor attacker;
     private Actor target;
     
+    /**
+     * Instantiate an action handler for Yugo / Final Boss
+     * @param actor Attacker / source actor (Likely Yugo / Final Boss)
+     * @param subject Target (Likely player)
+     */
     public YugoAttackBehaviour(Actor actor, Actor subject) {
         this.attacker = actor;
         this.target = subject;
@@ -30,7 +35,7 @@ public class YugoAttackBehaviour implements ActionFactory {
         Integer range = Gutils.distance(map.locationOf(attacker), map.locationOf(target));
         if (range <= 1){
             return new AttackAction(actor, target);
-        }// else if (){} // TODO: additional attack types (if time permits)
+        }// else if (){} // TODO: create additional attack types (if time permits)
         return null;
     }
 }

@@ -3,7 +3,8 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
- * Action for player to unlock doors. If player has key, door may be unlocked and key consumed (any key to any door).
+ * Action for player to unlock doors. If player has key, door may be unlocked and 
+ * key consumed if so (any key to any door).
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <SDEN0009@student.monash.edu>
@@ -13,10 +14,12 @@ import edu.monash.fit2099.engine.*;
 public class UnlockDoorAction extends Action {
 
 	private Location doorLocation;
-	private String direction;
 	
-	public UnlockDoorAction(String direction, Location doorLocation) {
-		this.direction = direction;
+	/**
+	 * Action for player to attempt to unlock a door
+	 * @param doorLocation relative direction of door to unlock to actor calling
+	 */
+	public UnlockDoorAction(Location doorLocation) {
 		this.doorLocation = doorLocation;
 	}
 	

@@ -13,6 +13,10 @@ import edu.monash.fit2099.engine.*;
  */
 public class WaterPool extends Ground {
 	
+	/**
+	 * Instantiate a waterpool ground object
+	 * As a ground type, replaces ground at loc
+	 */
 	public WaterPool() {
 		super('&');
 	}
