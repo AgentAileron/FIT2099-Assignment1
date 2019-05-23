@@ -2,6 +2,17 @@ package game;
 
 import edu.monash.fit2099.engine.*;
 
+/**
+ * Action for player to use water pistol
+ * Pistol defeats exoskeleton of Yugo if hit, otherwise has no effect on target
+ * One shot before reloads
+ * Requires fancyplayer to function
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <SDEN0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class ShootWaterPistolAction extends Action {
 	
 	private Actor target;
