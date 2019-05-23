@@ -32,7 +32,7 @@ public class HostileAttackBehaviour implements ActionFactory {
 			return null;
         }
         
-        Integer range = Utilities.distance(map.locationOf(attacker), map.locationOf(target));
+        Integer range = Gutils.distance(map.locationOf(attacker), map.locationOf(target));
         if (range <= 1){
             return new AttackAction(actor, target);
         }else{

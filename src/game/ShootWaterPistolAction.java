@@ -12,8 +12,8 @@ public class ShootWaterPistolAction extends Action {
 	
 	@Override
 	public String execute(Actor actor, GameMap map) {
-		Item waterPistol = Utilities.getItem(actor, '~');
-		Item exoskeleton = Utilities.getItem(target, 'x');
+		Item waterPistol = Gutils.getItem(actor, '~');
+		Item exoskeleton = Gutils.getItem(target, 'x');
 		
 		// If the player has a water pistol
 		if (waterPistol != null) {
@@ -50,7 +50,7 @@ public class ShootWaterPistolAction extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		if (Utilities.getItem(actor, '~') != null)
+		if (Gutils.getItem(actor, '~') != null)
 			return actor + " shoots water pistol at " + target;
 		else
 			return "";

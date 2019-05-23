@@ -40,7 +40,7 @@ public class EnterRocketAction extends Action {
 				return actor + " has entered the rocket and returned to Earth.";
 			}
 		}
-		else if (Utilities.getItem(actor, 'o') == null)
+		else if (Gutils.getItem(actor, 'o') == null)
 			return actor + " tries to enter the rocket, but realises they don't have an oxygen tank.";
 		
 		return actor + " tries to enter the rocket, but realises they don't have a space suit.";

@@ -14,7 +14,7 @@ import java.util.List;
  * @version     1.0
  * @since       1.0
  */
-public class Goon extends Grunt {
+public class Goon extends Actor {
 
 	/**
 	 * Instantiate a Goon hostile NPC
@@ -22,10 +22,11 @@ public class Goon extends Grunt {
 	 * @param player player instance the goon will target
 	 */
 	public Goon(String name, Actor player) {
-		super(name, player, 'G');
+		super(name, 'G', 5, 50);
 		addBehaviour(new InsultBehavior(player));
-		Item tazer = new WeaponItem("tazer", '^', 10, "zaps");
-		addItemToInventory(tazer);
+		addBehaviour(new HostileAttackBehaviour(this, player));
+		addBehaviour(new FollowBehaviour(player));
+		addItemToInventory(new WeaponItem("tazer", '^', 10, "zaps"));
 	}
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
