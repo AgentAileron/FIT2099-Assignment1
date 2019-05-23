@@ -17,6 +17,10 @@ public class ShootLazerAction extends Action implements ActionFactory {
 	private Actor target;
 	private Random rand = new Random();
 
+	/**
+	 * Instantiate an instance of lazer shot (used by miniboss)
+	 * @param subject target of the miniboss (player)
+	 */
 	public ShootLazerAction(Actor subject) {
 		this.target = subject;
 	}

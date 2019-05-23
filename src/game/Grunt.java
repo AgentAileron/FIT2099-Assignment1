@@ -18,8 +18,8 @@ public class Grunt extends Actor {
 	// Grunts have 50 hitpoints and are always represented with a g
 	/**
 	 * Instantiate a Grunt - grunts have 40 hp and are always represented by a g
-	 * @param name
-	 * @param player
+	 * @param name The name of the grunt
+	 * @param player Player instance the goon will target
 	 */
 	public Grunt(String name, Actor player) {
 		super(name, 'g', 5, 50);

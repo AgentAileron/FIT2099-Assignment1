@@ -39,6 +39,10 @@ public class InsultBehavior extends Action implements ActionFactory{
 			"I am inevitable"
 		};
 
+	/**
+	 * Instantiate a new insult attack behaviour for an Actor
+	 * @param subject The actor the insult is being directed to
+	 */
 	public InsultBehavior(Actor subject){
 		this.target = subject;
 	}

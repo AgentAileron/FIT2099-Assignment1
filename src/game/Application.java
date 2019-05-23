@@ -100,7 +100,6 @@ public class Application {
 		Item body = new Item("Rocket Body", 'h');
 		Item engine = new Item("Rocket Engine", 'e');
 		Item plan = new Item("Rocket Plan", 'p');
-		Item lazerDrill = new WeaponItem("Lazer Drill", '<', 25, "lazer-drills");
 		Item exoskeleton = new Item("Exo-skeleton", 'x');
 		Item spacesuit = new Item("Space Suit", '8');
 		
@@ -112,12 +111,14 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
 		Item w = Item.newInventoryItem("Water Pistol", '~');
 		w.addSkill(WaterPistolCharge.EMPTY);
 		player.addItemToInventory(w);
 		// End Test
 		
-		yugo.addItemToInventory(lazerDrill);
 		yugo.addItemToInventory(exoskeleton);
 
 		miniboss.addItemToInventory(engine);
