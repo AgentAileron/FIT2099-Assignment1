@@ -25,7 +25,6 @@ public class FancyPlayer extends Player {
 		
 		// If player is on the moon, check how much oxygen they have
 		if (onTheMoon) {
-			
 			if (Gutils.getItem(this, '8') != null) {
 				Gutils.getItem(this, '8').getAllowableActions().clear();
 			}
@@ -38,9 +37,12 @@ public class FancyPlayer extends Player {
 			
 			oxygenRemaining--;
 			
+			// If player runs out of oxygen, send them back to the lair
 			if (oxygenRemaining <= 0) {
 				display.println("Player has run out of oxygen! Their safety system ejects them back to earth.");
-				this.movePlayerToMap("Lair");
+				maps.get(0).moveActor(this, maps.get(0).at(0, 3));
+				onTheMoon = false;
+				return new SkipTurnAction();
 			}
 			else {
 				display.println("Player has " + oxygenRemaining + " steps of oxygen left.");
@@ -119,11 +121,11 @@ public class FancyPlayer extends Player {
 	public void movePlayerToMap(String mapName) {
 		if (mapName == "Moon") {
 			onTheMoon = true;
-			maps.get(1).moveActor(this, maps.get(1).at(3, 1));
+			maps.get(1).moveActor(this, maps.get(1).at(6, 0));
 		}
 		else if (mapName == "Lair") {
+			maps.get(0).moveActor(this, maps.get(0).at(0, 3));
 			onTheMoon = false;
-			maps.get(0).moveActor(this, maps.get(0).at(13, 21));
 		}
 	}
 }
