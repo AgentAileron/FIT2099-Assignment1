@@ -13,6 +13,9 @@ import edu.monash.fit2099.engine.Ground;
  */
 public class Wall extends Ground {
 
+	/**
+	 * Instantiate a wall ground type
+	 */
 	public Wall() {
 		super('#');
 	}

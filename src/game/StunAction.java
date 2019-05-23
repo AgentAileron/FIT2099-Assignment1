@@ -4,7 +4,7 @@ import edu.monash.fit2099.engine.*;
 
 /**
  * Action for Ninja - stuns player for two turns, disallowing all player actions
- * NB: relies partially on modification to Player class in engine
+ * NB: need to be called on an actor which is an instance of fancy player, else will have no effect
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <SDEN0009@student.monash.edu>
@@ -14,6 +14,11 @@ import edu.monash.fit2099.engine.*;
 public class StunAction extends Action {
 	private FancyPlayer target;
 
+    /**
+     * Instantiates an instance of stun action, 
+     * the target (player) is specified
+     * @param target target of the attempted stun (only works if called on fancyplayer)
+     */
 	public StunAction(Actor target) {
         this.target = (FancyPlayer) target;
     }

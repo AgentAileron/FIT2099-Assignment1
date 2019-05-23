@@ -1,12 +1,22 @@
 package game;
 
-import edu.monash.fit2099.engine.Actions;
-import edu.monash.fit2099.engine.Actor;
-import edu.monash.fit2099.engine.Ground;
-import edu.monash.fit2099.engine.Location;
+import edu.monash.fit2099.engine.*;
 
+/**
+ * Waterpools - ground objects designated for spawning on moon
+ * Actors cannot walk over water, used for player to refill water-pistol
+ * 
+ * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
+ * @author      Sarah Dennis <SDEN0009@student.monash.edu>
+ * @version     1.0
+ * @since       1.0
+ */
 public class WaterPool extends Ground {
 	
+	/**
+	 * Instantiate a waterpool ground object
+	 * As a ground type, replaces ground at loc
+	 */
 	public WaterPool() {
 		super('&');
 	}

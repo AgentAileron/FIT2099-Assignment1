@@ -4,7 +4,8 @@ import edu.monash.fit2099.engine.*;
 
 /**
  * Action for player to interact with Q (talking)
- * Talking does not affect game environment - simply hints player when they may trade plans for parts
+ * Talking does not affect game environment after completion:
+ * simply hints player when they may trade plans for parts with console return
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
  * @author      Sarah Dennis <SDEN0009@student.monash.edu>
@@ -15,6 +16,10 @@ public class TalkToQAction extends Action {
 	
 	private Actor subject;
 
+	/**
+	 * Instantiate the action for player to talk to Q
+	 * @param subject The instance of Q
+	 */
 	public TalkToQAction(Actor subject) {
 		this.subject = subject;
 	}

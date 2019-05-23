@@ -14,6 +14,9 @@ import java.util.List;
  */
 public class RandomWalkBehaviour implements ActionFactory{
 
+    /**
+     * Create new instance of RandomWalkBehaviour in an Actor (likely an NPC)
+     */
     public RandomWalkBehaviour() {}
 
     @Override
