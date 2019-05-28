@@ -21,6 +21,7 @@ public class FancyPlayer extends Player {
 	private int oxygenRemaining = 0;
 	private boolean onTheMoon = false;
 	protected List<GameMap> maps;
+	protected EndGame endStatus;
 
 	/**
 	 * Instantiate a FancyPlayer, an upgraded version of player
@@ -185,5 +186,18 @@ public class FancyPlayer extends Player {
 			maps.get(0).moveActor(this, maps.get(0).at(0, 3));
 			onTheMoon = false;
 		}
+	}
+	
+	public void initiateEnd(String end) {
+		if (end == "exit")
+			endStatus = EndGame.EXIT;
+		else if (end == "win")
+			endStatus = EndGame.WIN;
+		else if (end == "lose")
+			endStatus = EndGame.LOSE;
+	}
+	
+	public EndGame getEndStatus() {
+		return this.endStatus;
 	}
 }

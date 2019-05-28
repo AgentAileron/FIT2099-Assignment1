@@ -21,7 +21,7 @@ public class Application {
 	 * Note that all locations, and their placed NPCs, items, and ground panels are initialised here
 	 */
 	public static void main(String[] args) {
-		World world = new World(new Display());
+		World world = new FancyWorld(new Display());
 		
 		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket(), new WaterPool(), new OxygenDispenser());
 
@@ -107,6 +107,7 @@ public class Application {
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
 		// Test
+		/*
 		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
@@ -116,7 +117,7 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
 		Item w = Item.newInventoryItem("Water Pistol", '~');
 		w.addSkill(WaterPistolCharge.EMPTY);
-		player.addItemToInventory(w);
+		player.addItemToInventory(w);*/
 		// End Test
 		
 		yugo.addItemToInventory(exoskeleton);
