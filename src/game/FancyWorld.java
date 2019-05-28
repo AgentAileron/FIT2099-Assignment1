@@ -15,7 +15,7 @@ public class FancyWorld extends World {
 	
 	@Override
 	public void run() {
-		if (!player.isConscious())
+		if ((!player.isConscious()) && (user.getEndStatus() == null))
 			user.initiateEnd("lose");
 		else if (user.getEndStatus() == null)
 			if (player == null)

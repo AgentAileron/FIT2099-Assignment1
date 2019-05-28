@@ -188,6 +188,10 @@ public class FancyPlayer extends Player {
 		}
 	}
 	
+	/**
+	 * Defines the the type of end game
+	 * @param end String that denotes type of ending
+	 */
 	public void initiateEnd(String end) {
 		if (end == "exit")
 			endStatus = EndGame.EXIT;
@@ -197,6 +201,10 @@ public class FancyPlayer extends Player {
 			endStatus = EndGame.LOSE;
 	}
 	
+	/**
+	 * Returns the type of end game that has been defined
+	 * @return End game type or null
+	 */
 	public EndGame getEndStatus() {
 		return this.endStatus;
 	}
