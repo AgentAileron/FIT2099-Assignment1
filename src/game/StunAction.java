@@ -12,7 +12,7 @@ import edu.monash.fit2099.engine.*;
  * @since       1.0
  */
 public class StunAction extends Action {
-	private FancyPlayer target;
+    private FancyPlayer target;
 
     /**
      * Instantiates an instance of stun action, 
@@ -26,19 +26,28 @@ public class StunAction extends Action {
     @Override
 	public String execute(Actor actor, GameMap map) {
         String output = actor + " tries to stun " + target + "...";
+        boolean success = false;
         if (target instanceof FancyPlayer){
             if (target.stunned()){
-                return output + "but " + target + " was already stunned.";
+                output += "but " + target + " was already stunned. \n" + actor + " tries to hide from his failure...";
             }
             if (Math.random() < 0.5){
                 target.stun();
-                return output + target + " was stunned for two turns!";
+                success = true;
+                output += target + " was stunned for two turns!";
             }else{
-                return output + "but " + actor + " missed.";
+                output += "but " + actor + " missed. \n" + actor + " tries to run from the shame...";
             }
         }else{
-            return output + "but " + target + " could not be stunned!";
+            output += "but " + target + " could not be stunned! \n" + actor + " attempts to retreat...";
         }
+
+        // If stun failed, Ninja retreats
+        if (!(success)){
+            
+        }
+
+        return output;
     }
 
     @Override
@@ -49,5 +58,5 @@ public class StunAction extends Action {
 	@Override
 	public String hotKey() {
 		return "";
-	}
+    }
 }
