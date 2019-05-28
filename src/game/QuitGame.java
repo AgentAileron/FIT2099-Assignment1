@@ -20,11 +20,11 @@ public class QuitGame extends Action {
 
 	@Override
 	public String menuDescription(Actor actor) {
-		return "EXIT THE GAME";
+		return "Quit the game";
 	}
 
 	@Override
 	public String hotKey() {
-		return "";
+		return "-";
 	}
 }

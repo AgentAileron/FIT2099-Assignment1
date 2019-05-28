@@ -72,26 +72,31 @@ public class Application {
 		// -- CREATE ACTORS ------------------------------------------------------------------ //
 
 		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
-		//world.addPlayer(player, lairMap, 4, 19);
 		world.addPlayer(player, lairMap, 0, 0);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
+		
+		Actor moonGoon = new Goon("Eureka", player);
+		moonMap.addActor(moonGoon, 7, 5);
+		
+		Actor moonGrunt = new Grunt("Alpha", player);
+		moonMap.addActor(moonGrunt, 9, 8);
 
 		Actor miniboss = new Miniboss("Dr Maybe", player);
 		lairMap.addActor(miniboss, 26, 12);
 		
-		Actor testGoon = new Goon("Mongo", player);
-		lairMap.addActor(testGoon, 1, 1);
+		Actor lairGoon = new Goon("Mongo", player);
+		lairMap.addActor(lairGoon, 1, 1);
 
-		Actor testNinja = new Ninja("Norbert", player);
-		lairMap.addActor(testNinja, 14, 12);
+		Actor lairNinja = new Ninja("Norbert", player);
+		lairMap.addActor(lairNinja, 14, 12);
 
-		Actor testGrunt = new Grunt("Obediah", player);
-		lairMap.addActor(testGrunt, 10, 5);
+		Actor lairGrunt = new Grunt("Obediah", player);
+		lairMap.addActor(lairGrunt, 10, 5);
 		
-		Actor testQ = new Qnpc(player);
-		lairMap.addActor(testQ, 27, 4);
+		Actor lairQ = new Qnpc(player);
+		lairMap.addActor(lairQ, 27, 4);
 		
 
 		// -- CREATE ITEMS ------------------------------------------------------------------- //
@@ -107,27 +112,26 @@ public class Application {
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
 		// Test
-		/*
+		
 		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		Item w = Item.newInventoryItem("Water Pistol", '~');
-		w.addSkill(WaterPistolCharge.EMPTY);
-		player.addItemToInventory(w);*/
+		//player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		//player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		//player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		//Item w = Item.newInventoryItem("Water Pistol", '~');
+		//w.addSkill(WaterPistolCharge.EMPTY);
+		//player.addItemToInventory(w);
 		// End Test
 		
 		yugo.addItemToInventory(exoskeleton);
 
 		miniboss.addItemToInventory(engine);
-		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		lairGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		lairGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
 		lairMap.addItem(wristwatchLazer, 8, 2);
-		lairMap.addItem(body, 2, 1);
 		lairMap.addItem(plan, 7, 4);
 		lairMap.addItem(waterpistol, 16, 8);
 		

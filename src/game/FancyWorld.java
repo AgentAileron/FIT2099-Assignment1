@@ -94,11 +94,11 @@ public class FancyWorld extends World {
 		FancyPlayer user = (FancyPlayer) player;
 		
 		if (user.getEndStatus() == EndGame.WIN)
-			return "Congratulations! You win!";
+			return "Congratulations! You win! Thanks for playing!";
 		else if (user.getEndStatus() == EndGame.LOSE)
 			return "You were defeated. Game over.";
 		else if (user.getEndStatus() == EndGame.EXIT)
-			return "You have exited the game. Thanks for playing!";
+			return "Thanks for playing!";
 		return "";
 	}
 }
