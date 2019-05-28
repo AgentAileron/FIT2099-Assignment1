@@ -134,6 +134,5 @@ public class Application {
 
 		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //
 		world.run();
-		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
 	}
 }

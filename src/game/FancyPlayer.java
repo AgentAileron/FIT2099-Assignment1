@@ -21,7 +21,7 @@ public class FancyPlayer extends Player {
 	private int oxygenRemaining = 0;
 	private boolean onTheMoon = false;
 	protected List<GameMap> maps;
-	protected EndGame endStatus;
+	private EndGame endStatus = EndGame.NONE;
 
 	/**
 	 * Instantiate a FancyPlayer, an upgraded version of player
@@ -39,6 +39,8 @@ public class FancyPlayer extends Player {
 	
 	@Override
 	protected Action showMenu(Actions actions, Display display) {
+		actions.add(new QuitGame());
+		
 		ArrayList<Character> freeChars = new ArrayList<Character>();
 		HashMap<Character, Action> keyToActionMap = new HashMap<Character, Action>();
 		
