@@ -44,7 +44,18 @@ public class StunAction extends Action {
 
         // If stun failed, Ninja retreats
         if (!(success)){
-            
+            for (Exit exit : map.locationOf(actor).getExits()) {
+                Location destination = exit.getDestination();
+                if (destination.canActorEnter(actor)){
+                    int oldDist = Gutils.distance(map.locationOf(actor), map.locationOf(target));
+                    int newDist = Gutils.distance(destination, map.locationOf(target));
+
+                    if (newDist > oldDist){
+                        map.moveActor(actor, destination);
+                        break;
+                    }
+                }
+            }
         }
 
         return output;
