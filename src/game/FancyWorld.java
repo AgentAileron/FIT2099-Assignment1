@@ -14,6 +14,10 @@ import edu.monash.fit2099.engine.World;
 
 public class FancyWorld extends World {
 
+	/**
+	 * Adds extra features to world, such as different endings and prevents game from crashing when player is removed from the game maps.
+	 * @param display Same display as the one for the world class
+	 */
 	public FancyWorld(Display display) {
 		super(display);
 	}
