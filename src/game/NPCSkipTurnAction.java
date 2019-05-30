@@ -15,7 +15,7 @@ public class NPCSkipTurnAction extends SkipTurnAction {
 
     @Override
 	public String menuDescription(Actor actor) {
-		return actor + " is idle.";
+		return "  " + actor + " is idle.";
 	}
     
 }
