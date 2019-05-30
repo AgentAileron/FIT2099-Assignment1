@@ -12,6 +12,9 @@ import edu.monash.fit2099.engine.*;
  */
 public class OxygenDispenser extends Ground {
 	
+	/**
+	 * Ground sub-class the represents an oxygen dispenser - It allows oxygen tanks to be created
+	 */
 	public OxygenDispenser() {
 		super('╬');
 		this.addSkill(Dispensing.INACTIVE);

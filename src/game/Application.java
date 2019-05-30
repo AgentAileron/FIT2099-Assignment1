@@ -110,6 +110,9 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
+		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
 		Item w = Item.newInventoryItem("Water Pistol", '~');
 		w.addSkill(WaterPistolCharge.EMPTY);
 		player.addItemToInventory(w);

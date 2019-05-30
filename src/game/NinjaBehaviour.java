@@ -14,6 +14,10 @@ public class NinjaBehaviour implements ActionFactory{
   
     private Actor target;
 
+    /**
+     * Behaviour that causes the ninja to move away when the player is within range
+     * @param target The actor to move away from (Will be the player)
+     */
     public NinjaBehaviour(Actor target) {
 		  this.target = (FancyPlayer) target;
 	}

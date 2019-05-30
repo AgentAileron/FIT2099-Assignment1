@@ -16,6 +16,12 @@ import java.util.List;
  */
 public class Ninja extends Actor {
 
+	/**
+	 * Hostile actor which is a subclass of actor - It remains still until the player comes into range
+	 * once moving, it will attempt to stun the player or move away one space
+	 * @param name The name of the ninja
+	 * @param player The player being targeted
+	 */
 	public Ninja(String name, Actor player) {
 		super(name, 'n', 5, 50);
 		addBehaviour(new NinjaBehaviour(player));

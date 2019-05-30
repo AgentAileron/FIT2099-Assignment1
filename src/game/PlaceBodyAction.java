@@ -13,10 +13,12 @@ import edu.monash.fit2099.engine.*;
 public class PlaceBodyAction extends Action {
 	
 	private Location rocketPadLocation;
-	private String direction;
 
+	/**
+	 * Action that allows the player to place a rocket body item onto the rocket pad
+	 * @param rocketPadLocation Location of the rocket pad on the map
+	 */
 	public PlaceBodyAction(String direction, Location rocketPadLocation) {
-		this.direction = direction;
 		this.rocketPadLocation = rocketPadLocation;
 	}
 
