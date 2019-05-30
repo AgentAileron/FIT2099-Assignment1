@@ -21,7 +21,7 @@ public class Application {
 	 * Note that all locations, and their placed NPCs, items, and ground panels are initialised here
 	 */
 	public static void main(String[] args) {
-		World world = new World(new Display());
+		World world = new FancyWorld(new Display());
 		
 		FancyGroundFactory groundFactory = new FancyGroundFactory(new Floor(), new Wall(), new Door(), new RocketPad(), new Rocket(), new WaterPool(), new OxygenDispenser());
 
@@ -76,21 +76,27 @@ public class Application {
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
+		
+		Actor moonGoon = new Goon("Eureka", player);
+		moonMap.addActor(moonGoon, 7, 5);
+		
+		Actor moonGrunt = new Grunt("Alpha", player);
+		moonMap.addActor(moonGrunt, 9, 8);
 
 		Actor miniboss = new Miniboss("Dr Maybe", player);
 		lairMap.addActor(miniboss, 26, 12);
 		
-		Actor testGoon = new Goon("Mongo", player);
-		lairMap.addActor(testGoon, 1, 1);
+		Actor lairGoon = new Goon("Mongo", player);
+		lairMap.addActor(lairGoon, 1, 1);
 
-		Actor testNinja = new Ninja("Norbert", player);
-		lairMap.addActor(testNinja, 14, 12);
+		Actor lairNinja = new Ninja("Norbert", player);
+		lairMap.addActor(lairNinja, 14, 12);
 
-		Actor testGrunt = new Grunt("Obediah", player);
-		lairMap.addActor(testGrunt, 10, 5);
+		Actor lairGrunt = new Grunt("Obediah", player);
+		lairMap.addActor(lairGrunt, 10, 5);
 		
-		Actor testQ = new Qnpc(player);
-		lairMap.addActor(testQ, 27, 4);
+		Actor lairQ = new Qnpc(player);
+		lairMap.addActor(lairQ, 27, 4);
 		
 
 		// -- CREATE ITEMS ------------------------------------------------------------------- //
@@ -121,17 +127,15 @@ public class Application {
 		yugo.addItemToInventory(exoskeleton);
 
 		miniboss.addItemToInventory(engine);
-		testGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		testGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		lairGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
+		lairGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		
 		lairMap.addItem(wristwatchLazer, 8, 2);
-		lairMap.addItem(body, 2, 1);
 		lairMap.addItem(plan, 7, 4);
 		lairMap.addItem(waterpistol, 16, 8);
 		
 
 		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //
 		world.run();
-		System.out.println("\n𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕝𝕒𝕪𝕚𝕟𝕘 !");
 	}
 }

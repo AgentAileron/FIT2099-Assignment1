@@ -21,6 +21,7 @@ public class FancyPlayer extends Player {
 	private int oxygenRemaining = 0;
 	private boolean onTheMoon = false;
 	protected List<GameMap> maps;
+	private EndGame endStatus = EndGame.NONE;
 
 	/**
 	 * Instantiate a FancyPlayer, an upgraded version of player
@@ -38,6 +39,8 @@ public class FancyPlayer extends Player {
 	
 	@Override
 	protected Action showMenu(Actions actions, Display display) {
+		actions.add(new QuitGame());
+		
 		ArrayList<Character> freeChars = new ArrayList<Character>();
 		HashMap<Character, Action> keyToActionMap = new HashMap<Character, Action>();
 		
@@ -80,6 +83,39 @@ public class FancyPlayer extends Player {
 			return new SkipTurnAction();	// Do nothing if no actions available
 		}
 
+		if (onTheMoon) {
+			if (Gutils.getItem(this, '~') != null) {
+				Gutils.getItem(this, '~').getAllowableActions().clear();
+				
+				Location here = maps.get(1).locationOf(this);
+				
+				for (Exit exit : here.getExits()) {
+					Location destination = exit.getDestination();
+				
+					Range xrange = new Range(0, 10);
+					Range yrange = new Range(0, 10);
+					
+					//if (actorLocations.isAnActorAt(destination))
+				
+				
+				//Location here = maps.get(1).locationOf(this);
+	
+				Range xs, ys;
+			
+				xs = new Range(here.x(), Math.abs(here.x()) + 1);
+				ys = new Range(here.y(), Math.abs(here.y()) + 1);
+	
+				for (int x : xs) {
+					for (int y : ys) {
+						if (maps.get(1).at(x, y).getGround().blocksThrownObjects())
+							Gutils.getItem(this, '~').getAllowableActions().clear();
+						else if (maps.get(1).isAnActorAt(maps.get(1).at(x, y)) == true)
+							Gutils.getItem(this, '~').getAllowableActions().add(new ShootWaterPistolAction(maps.get(1).actorAt(maps.get(1).at(x, y))));
+					}
+				}
+			}
+		}
+		
 		for (char i = 'a'; i <= 'z'; i++)
 			freeChars.add(i);
 
@@ -164,5 +200,26 @@ public class FancyPlayer extends Player {
 			maps.get(0).moveActor(this, maps.get(0).at(0, 3));
 			onTheMoon = false;
 		}
+	}
+	
+	/**
+	 * Defines the the type of end game
+	 * @param end String that denotes type of ending
+	 */
+	public void initiateEnd(String end) {
+		if (end == "exit")
+			endStatus = EndGame.EXIT;
+		else if (end == "win")
+			endStatus = EndGame.WIN;
+		else if (end == "lose")
+			endStatus = EndGame.LOSE;
+	}
+	
+	/**
+	 * Returns the type of end game that has been defined
+	 * @return End game type or null
+	 */
+	public EndGame getEndStatus() {
+		return this.endStatus;
 	}
 }
