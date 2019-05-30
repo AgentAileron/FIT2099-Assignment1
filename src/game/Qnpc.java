@@ -45,4 +45,9 @@ public class Qnpc extends Actor {
 		
 		return new NPCSkipTurnAction();	// Do nothing if no actions available
 	}
+
+	@Override
+	public void hurt(int points){
+		return;	// Cannot hurt Q
+	}
 }
