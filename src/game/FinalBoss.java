@@ -49,6 +49,17 @@ public class FinalBoss extends Actor {
 
 		return new NPCSkipTurnAction();	// Do nothing if no actions available
 	}
+	
+	@Override
+	public Actions getAllowableActions(Actor otherActor, String direction, GameMap map) {
+		if (Gutils.getItem(this, 'x') != null) {
+			return new Actions(new ShootWaterPistolAction(this));
+		}
+		else {
+			return new Actions(new AttackAction(otherActor, this));
+		}
+	}
+	
 
 	@Override	// Override to check for exo-suit before applying damage
 	public void hurt(int points){

@@ -91,26 +91,8 @@ public class FancyPlayer extends Player {
 				
 				for (Exit exit : here.getExits()) {
 					Location destination = exit.getDestination();
-				
-					Range xrange = new Range(0, 10);
-					Range yrange = new Range(0, 10);
-					
-					//if (actorLocations.isAnActorAt(destination))
-				
-				
-				//Location here = maps.get(1).locationOf(this);
-	
-				Range xs, ys;
-			
-				xs = new Range(here.x(), Math.abs(here.x()) + 1);
-				ys = new Range(here.y(), Math.abs(here.y()) + 1);
-	
-				for (int x : xs) {
-					for (int y : ys) {
-						if (maps.get(1).at(x, y).getGround().blocksThrownObjects())
-							Gutils.getItem(this, '~').getAllowableActions().clear();
-						else if (maps.get(1).isAnActorAt(maps.get(1).at(x, y)) == true)
-							Gutils.getItem(this, '~').getAllowableActions().add(new ShootWaterPistolAction(maps.get(1).actorAt(maps.get(1).at(x, y))));
+					if (maps.get(1).isAnActorAt(destination)) {
+						Gutils.getItem(this, '~').getAllowableActions().add(new ShootWaterPistolAction(maps.get(1).actorAt(destination)));
 					}
 				}
 			}

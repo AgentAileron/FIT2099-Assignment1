@@ -73,6 +73,7 @@ public class Application {
 
 		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
 		world.addPlayer(player, lairMap, 4, 19);
+		//world.addPlayer(player, lairMap, 1, 0);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
@@ -121,8 +122,7 @@ public class Application {
 		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
 		Item w = Item.newInventoryItem("Water Pistol", '~');
 		w.addSkill(WaterPistolCharge.EMPTY);
-		player.addItemToInventory(w);
-		*/
+		player.addItemToInventory(w);*/
 		
 		yugo.addItemToInventory(exoskeleton);
 
@@ -133,6 +133,7 @@ public class Application {
 		lairMap.addItem(wristwatchLazer, 8, 2);
 		lairMap.addItem(plan, 7, 4);
 		lairMap.addItem(waterpistol, 16, 8);
+		lairMap.addItem(spacesuit, 19, 4);
 		
 
 		// -- RUNTIME AND TERMINATION -------------------------------------------------------- //
