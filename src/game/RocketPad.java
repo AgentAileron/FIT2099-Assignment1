@@ -13,6 +13,10 @@ import edu.monash.fit2099.engine.*;
  */
 public class RocketPad extends Ground {
 
+	/**
+	 * Creates a ground type that represents the rocket pad. 
+	 * Rocket engine and body are placed through allowable actions provided in this class.
+	 */
 	public RocketPad() {
 		super('=');
 	}

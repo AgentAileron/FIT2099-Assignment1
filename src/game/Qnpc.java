@@ -16,6 +16,11 @@ public class Qnpc extends Actor {
 
 	public boolean exileReady = false;
 
+	/**
+	 * Actor that represents Q, a non-hostile non-player character who can talk and trade with the player.
+	 * It randomly moves across the map.
+	 * @param player The player actor that Q will interact with
+	 */
     public Qnpc(Actor player){
 		super("Q", 'Q', 4, 9999);
 		addBehaviour(new RandomWalkBehaviour());
