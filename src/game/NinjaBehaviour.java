@@ -19,7 +19,7 @@ public class NinjaBehaviour implements ActionFactory{
      * @param target The actor to move away from (Will be the player)
      */
     public NinjaBehaviour(Actor target) {
-		  this.target = target;
+		  this.target = (FancyPlayer) target;
 	}
 
 
@@ -32,24 +32,11 @@ public class NinjaBehaviour implements ActionFactory{
     Location here = map.locationOf(actor);
 		Location there = map.locationOf(target);
 
-    int currentDistance = distance(here, there);
+    int currentDistance = Gutils.distance(here, there);
 
     if (currentDistance < 5){
-      for (Exit exit : here.getExits()) {
-        Location destination = exit.getDestination();
-        if (destination.canActorEnter(actor)) {
-          int newDistance = distance(destination, there);
-          if (newDistance > currentDistance) { // Simply invert condition from FollowBehaviour
-            return new MoveActorAction(destination, exit.getName());
-          }
-        }
-      }
+      return new AttemptStunAction(target);
     }
     return null;
-  }
-
-  // Proper distance
-	private int distance(Location a, Location b) {
-		return (int) Math.sqrt((a.x() - b.x())^2 + (a.y() - b.y())^2);
   }
 }

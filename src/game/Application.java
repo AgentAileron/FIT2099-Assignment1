@@ -72,8 +72,7 @@ public class Application {
 		// -- CREATE ACTORS ------------------------------------------------------------------ //
 
 		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
-		//world.addPlayer(player, lairMap, 4, 19);
-		world.addPlayer(player, lairMap, 0, 0);
+		world.addPlayer(player, lairMap, 4, 19);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
@@ -106,7 +105,7 @@ public class Application {
 		Item waterpistol = new Item("Water Pistol", '~');
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
 
-		// Test
+		/*
 		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
 		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
 		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
@@ -117,7 +116,7 @@ public class Application {
 		Item w = Item.newInventoryItem("Water Pistol", '~');
 		w.addSkill(WaterPistolCharge.EMPTY);
 		player.addItemToInventory(w);
-		// End Test
+		*/
 		
 		yugo.addItemToInventory(exoskeleton);
 
