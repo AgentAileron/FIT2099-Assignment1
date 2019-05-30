@@ -31,7 +31,7 @@ public class NinjaBehaviour implements ActionFactory{
     int currentDistance = Gutils.distance(here, there);
 
     if (currentDistance < 5){
-      return new StunAction(target);
+      return new AttemptStunAction(target);
     }
     return null;
   }

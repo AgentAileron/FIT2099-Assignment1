@@ -3,7 +3,7 @@ package game;
 import edu.monash.fit2099.engine.*;
 
 /**
- * Action for Ninja - stuns player for two turns, disallowing all player actions
+ * Action for Ninja - tries to stun actor for two turns, Ninja retreats on fail
  * NB: need to be called on an actor which is an instance of fancy player, else will have no effect
  * 
  * @author      Rithesh Jayaram <RJAY0006@student.monash.edu> 
@@ -11,7 +11,7 @@ import edu.monash.fit2099.engine.*;
  * @version     1.0
  * @since       1.0
  */
-public class StunAction extends Action {
+public class AttemptStunAction extends Action {
     private FancyPlayer target;
 
     /**
@@ -19,7 +19,7 @@ public class StunAction extends Action {
      * the target (player) is specified
      * @param target target of the attempted stun (only works if called on fancyplayer)
      */
-	public StunAction(Actor target) {
+	public AttemptStunAction(Actor target) {
         this.target = (FancyPlayer) target;
     }
     
