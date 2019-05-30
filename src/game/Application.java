@@ -111,18 +111,6 @@ public class Application {
 		
 		Item waterpistol = new Item("Water Pistol", '~');
 		waterpistol.addSkill(WaterPistolCharge.EMPTY);
-
-		/*
-		player.addItemToInventory(Item.newInventoryItem("Engine", 'e'));
-		player.addItemToInventory(Item.newInventoryItem("Body", 'h'));
-		player.addItemToInventory(Item.newInventoryItem("Space Suit", '8'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		player.addItemToInventory(Item.newInventoryItem("Oxygen Tank", 'o'));
-		Item w = Item.newInventoryItem("Water Pistol", '~');
-		w.addSkill(WaterPistolCharge.EMPTY);
-		player.addItemToInventory(w);*/
 		
 		yugo.addItemToInventory(exoskeleton);
 
