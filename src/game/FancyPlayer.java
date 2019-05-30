@@ -86,7 +86,19 @@ public class FancyPlayer extends Player {
 		if (onTheMoon) {
 			if (Gutils.getItem(this, '~') != null) {
 				Gutils.getItem(this, '~').getAllowableActions().clear();
+				
 				Location here = maps.get(1).locationOf(this);
+				
+				for (Exit exit : here.getExits()) {
+					Location destination = exit.getDestination();
+				
+					Range xrange = new Range(0, 10);
+					Range yrange = new Range(0, 10);
+					
+					//if (actorLocations.isAnActorAt(destination))
+				
+				
+				//Location here = maps.get(1).locationOf(this);
 	
 				Range xs, ys;
 			
