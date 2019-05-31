@@ -9,7 +9,7 @@ Group name: _teh\_cursed\_ones_
 **Assignment 2:** All relevant documents and progress on master (latest commit tagged with "*Assignment 2*")
 
 
-**Assignment 3:** All relevant documents and progress on master (latest commit tagged with "*Assignment 3*"). UML uploaded to `./docs/Assignment 3/`
+**Assignment 3:** All relevant documents and progress on master (latest commit tagged with "*Assignment_3*"). UML uploaded to `./docs/Assignment 3/`
 
 --------------------------------------------------------
 
