@@ -22,7 +22,7 @@ public class FancyPlayer extends Player {
 	private boolean onTheMoon = false;
 	protected List<GameMap> maps;
 	private EndGame endStatus = EndGame.NONE;
-	static Actor yugo;
+	public boolean yugoAlive = true;
 
 	/**
 	 * Instantiate a FancyPlayer, an upgraded version of player
@@ -46,7 +46,7 @@ public class FancyPlayer extends Player {
 		HashMap<Character, Action> keyToActionMap = new HashMap<Character, Action>();
 		
 		// If Yugo Maxx is unconscious and in the players inventory when they go back to the lair - Initiate win ending
-		if (!yugo.isConscious()) {
+		if (!yugoAlive) {
 			if ((Gutils.getItem(this, '%') != null) && (!this.isPlayerOnMoon())) {
 				this.initiateEnd("win");
 				maps.get(0).removeActor(this);

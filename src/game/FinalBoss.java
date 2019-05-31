@@ -18,6 +18,7 @@ import edu.monash.fit2099.engine.*;
 public class FinalBoss extends Actor {
 
 	private List<ActionFactory> actionFactories = new ArrayList<ActionFactory>();
+	FancyPlayer player;
 	
 	/**
 	 * Instantiate the final boss - can be done many times,
@@ -27,6 +28,7 @@ public class FinalBoss extends Actor {
 	 */
 	public FinalBoss(String name, Actor player) {
 		super(name, '¥', 6, 25);
+		this.player = (FancyPlayer) player;
 		addBehaviour(new InsultBehavior(player));				// 10% chance
 		addBehaviour(new YugoAttackBehaviour(this, player));	// Always tries melee attack
 		addBehaviour(new RandomWalkBehaviour());				// 60% chance (final behaviour, else nothing)
@@ -67,6 +69,9 @@ public class FinalBoss extends Actor {
 			if (super.inventory.get(i).getDisplayChar() == 'x'){
 				return;
 			}
+		}
+		if ((super.hitPoints - points) <= 0){
+			this.player.yugoAlive = false;
 		}
 		super.hurt(points);
 	}
