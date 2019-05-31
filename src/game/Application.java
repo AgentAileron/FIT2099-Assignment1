@@ -71,9 +71,8 @@ public class Application {
 
 		// -- CREATE ACTORS ------------------------------------------------------------------ //
 
-		Actor player = new FancyPlayer("Player", '@', 1, 1000000000, maps);	// Player instance
-		//world.addPlayer(player, lairMap, 4, 19);
-		world.addPlayer(player, lairMap, 1, 0);
+		Actor player = new FancyPlayer("Player", '@', 1, 100, maps);	// Player instance
+		world.addPlayer(player, lairMap, 4, 19);
 
 		Actor yugo = new FinalBoss("Yugo Maxx", player);
 		moonMap.addActor(yugo, 0, 0);
@@ -117,9 +116,6 @@ public class Application {
 		miniboss.addItemToInventory(engine);
 		lairGoon.addItemToInventory(Item.newInventoryItem("Key", '$'));
 		lairGrunt.addItemToInventory(Item.newInventoryItem("Key", '$'));
-		
-		player.addItemToInventory(Item.newInventoryItem("Rocket Engine", 'e'));
-		player.addItemToInventory(Item.newInventoryItem("Rocket Body", 'h'));
 		
 		lairMap.addItem(wristwatchLazer, 8, 2);
 		lairMap.addItem(plan, 7, 4);

@@ -47,9 +47,8 @@ public class FancyPlayer extends Player {
 		
 		// If Yugo Maxx is unconscious and in the players inventory when they go back to the lair - Initiate win ending
 		if (!yugoAlive) {
-			if ((Gutils.getItem(this, '%') != null) && (!this.isPlayerOnMoon())) {
-				this.initiateEnd("win");
-				maps.get(0).removeActor(this);
+			if ((Gutils.getItem(this, '%') != null) && (!onTheMoon)) {
+				endStatus = EndGame.WIN;
 			}
 		}
 		

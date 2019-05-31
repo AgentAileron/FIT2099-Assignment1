@@ -33,22 +33,26 @@ public class FancyWorld extends World {
 				throw new IllegalStateException();
 			
 			while (stillRunning()) {
-				GameMap playersMap = actorLocations.locationOf(player).map();
-				playersMap.draw(display);
-				for (Actor actor : actorLocations) {
-					if (actorLocations.locationOf(player) != null) {
-						if (actor != null) {
-							if (player != null)
-								processActorTurn(actor);
-							else
-								break;
-						}
-					}
-					else if ((!player.isConscious()) && (user.getEndStatus() == EndGame.NONE)) {
-						user.initiateEnd("lose");
-					}
-					else
+				if (user.getEndStatus() == EndGame.WIN)
 						break;
+				else {
+					GameMap playersMap = actorLocations.locationOf(player).map();
+					playersMap.draw(display);
+					for (Actor actor : actorLocations) {
+						if (actorLocations.locationOf(player) != null) {
+							if (actor != null) {
+								if (player != null)
+									processActorTurn(actor);
+								else
+									break;
+							}
+						}
+						else if ((!player.isConscious()) && (user.getEndStatus() == EndGame.NONE)) {
+							user.initiateEnd("lose");
+						}
+						else
+							break;
+					}
 				}
 			}
 		
