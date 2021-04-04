@@ -15,13 +15,13 @@ Group name: _teh\_cursed\_ones_
 
 _**This repo is brought to you by teh\_cursed\_ones**_
 
-![teh_cursed_ones watermark](https://i.imgur.com/MOOqVjQ.jpg)
+![teh_cursed_ones watermark](/teh_cursed_ones.jpg)
 
 --------------------------------------------------------
 
-_Rithesh R Jayaram_
+_MolarFox_
 
-_Sarah D Dennis_
+_sarahdennis8_
 
 --------------------------------------------------------
 
