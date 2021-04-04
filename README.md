@@ -1,13 +1,27 @@
-# FIT2099-Assignment1
-OwO
-XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD rolf lamoa
+# CLI Roguelike Assignment Repo
 
-------------------------------------------------------------------------------------
+Group name: _teh\_cursed\_ones_
 
-(Actually we got japed, friendship ended with Github, Gitlab is new best friend)
 
-------------------------------------------------------------------------------------
+**Assignment 1:** All relevant documents uploaded to `./docs/Assignment\ 1/`, full commit / contribution histories available in `./docs/contributions.md`
 
-**Here lies teh_cursed_ones FIT2099 repo, 2019-2019**
 
-*"Yeet" -Albert Einstein*
+**Assignment 2:** All relevant documents and progress on master (latest commit tagged with "*Assignment 2*")
+
+
+**Assignment 3:** All relevant documents and progress on master (latest commit tagged with "*Assignment_3*"). UML uploaded to `./docs/Assignment 3/`
+
+--------------------------------------------------------
+
+_**This repo is brought to you by teh\_cursed\_ones**_
+
+![teh_cursed_ones watermark](https://i.imgur.com/MOOqVjQ.jpg)
+
+--------------------------------------------------------
+
+_Rithesh R Jayaram_
+
+_Sarah D Dennis_
+
+--------------------------------------------------------
+
