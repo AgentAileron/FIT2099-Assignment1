@@ -19,9 +19,9 @@ _**This repo is brought to you by teh\_cursed\_ones**_
 
 --------------------------------------------------------
 
-_MolarFox_
+_[MolarFox](https://github.com/MolarFox)_
 
-_sarahdennis8_
+_[sarahdennis8](https://github.com/sarahddennis8)_
 
 --------------------------------------------------------
 
